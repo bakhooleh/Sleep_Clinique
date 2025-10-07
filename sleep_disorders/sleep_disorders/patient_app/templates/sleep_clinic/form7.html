@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}فرم PAP تیتراسیون - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form7.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-header">
+    <h2 class="form-title">فرم بعد از PAP تیتراسیون</h2>
+    <span class="form-date persian-date"></span>
+</div>
+
+<form method="post" action="{% url 'form7' %}">
+    {% csrf_token %}
+    
+    <!-- Patient Info Row -->
+    <div class="form-row">
+        <div class="form-col">
+            <label for="patient_name">نام بیمار:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+        </div>
+        <div class="form-col">
+            <label for="form_date">تاریخ:</label>
+            <input type="date" id="form_date" name="form_date" required>
+        </div>
+    </div>
+
+    <!-- Device Information Section -->
+    <div class="scale-container" style="margin-top: 20px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">اطلاعات دستگاه</h3>
+        
+        <table class="info-table">
+            <tr>
+                <td>آمروز صبح که از خواب بیدار شدید، در مقایسه با روزهای عادی چه احساسی داشتید؟</td>
+                <td>
+                    <select name="morning_feeling" style="width: 100%;">
+                        <option value="">انتخاب کنید</option>
+                        <option value="much_better">خیلی بهتر</option>
+                        <option value="better">بهتر</option>
+                        <option value="same">یکسان</option>
+                        <option value="worse">بدتر</option>
+                        <option value="much_worse">خیلی بدتر</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>کم:</td>
+                <td><input type="text" name="low_value" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>یکسان:</td>
+                <td><input type="text" name="same_value" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>بیشتر:</td>
+                <td><input type="text" name="more_value" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>فشار گوش ها:</td>
+                <td><input type="text" name="ear_pressure" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>تپ ولر:</td>
+                <td><input type="text" name="tap_value" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>درنهای مقصل:</td>
+                <td><input type="text" name="joint_pain" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>چشم های سست:</td>
+                <td><input type="text" name="tired_eyes" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>چشم های قرمز و لیفی:</td>
+                <td><input type="text" name="red_eyes" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>دید واضح:</td>
+                <td><input type="text" name="clear_vision" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>دید تیره:</td>
+                <td><input type="text" name="dark_vision" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td>دید تار:</td>
+                <td><input type="text" name="blurry_vision" style="width: 100%;"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- PAP Therapy Questions -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">سوالات درمان PAP</h3>
+        
+        <div class="form-group">
+            <label>لطفا سوالات زیر را با انتخاب یکی از گزینه های سمت چپ پاسخ دهید:</label>
+        </div>
+        
+        <div class="therapy-options">
+            <div class="device-row" style="width: 100%;">
+                <span style="min-width: 200px;">چه اندازه PAP خواب شما را بهبود بخشیده؟</span>
+                <label><input type="radio" name="pap_improvement" value="none"> عدلا</label>
+                <label><input type="radio" name="pap_improvement" value="little"> کم</label>
+                <label><input type="radio" name="pap_improvement" value="moderate"> تا حدودی</label>
+                <label><input type="radio" name="pap_improvement" value="good"> خوبی</label>
+                <label><input type="radio" name="pap_improvement" value="excellent"> خیلی</label>
+            </div>
+            
+            <div class="device-row" style="width: 100%;">
+                <span style="min-width: 200px;">چه اندازه استفاده از ماسک و دشین PAP برای شما آسان است؟</span>
+                <label><input type="radio" name="mask_ease" value="none"> عدلا</label>
+                <label><input type="radio" name="mask_ease" value="little"> کم</label>
+                <label><input type="radio" name="mask_ease" value="moderate"> تا حدودی</label>
+                <label><input type="radio" name="mask_ease" value="good"> خوبی</label>
+                <label><input type="radio" name="mask_ease" value="excellent"> خیلی</label>
+            </div>
+            
+            <div class="device-row" style="width: 100%;">
+                <span style="min-width: 200px;">چه اندازه فکر می کنید این دستگاه ممر یه هم بسیار قبول از خواب است؟</span>
+                <label><input type="radio" name="device_acceptance" value="none"> عدلا</label>
+                <label><input type="radio" name="device_acceptance" value="little"> کم</label>
+                <label><input type="radio" name="device_acceptance" value="moderate"> تا حدودی</label>
+                <label><input type="radio" name="device_acceptance" value="good"> خوبی</label>
+                <label><input type="radio" name="device_acceptance" value="excellent"> خیلی</label>
+            </div>
+        </div>
+        
+        <div class="form-group" style="margin-top: 20px;">
+            <label>بطور خلاصه سوالات زیر را پاسخ دهید:</label>
+            <textarea name="summary_response" rows="4" placeholder="اگر قرار بود شما برای یک از دوستانتان این دستگاه را توصیف کنید، چگونه توصیف می کنید؟"></textarea>
+        </div>
+    </div>
+
+    <!-- Additional Comments Section -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <div class="form-group">
+            <label>آیا این ماسک شما را به یاد چیز خاصی می اندازد؟</label>
+            <textarea name="mask_reminder" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>اگر جوابتان با ماسک و ماشین PAP نازاحت بوده لطفا چگونگی آن را توضیح دهید:</label>
+            <textarea name="discomfort_description" rows="4"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>اگر قرار بود این ماسک را تغییر دهید، چه جوری را تغییر می دادید؟</label>
+            <textarea name="mask_changes" rows="4"></textarea>
+        </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url 'form6' %}'">قبلی</button>
+        <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% block title %}علائم و نشانه ها - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form4.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="form-header">
+    <h2 class="form-title">فرم اطلاعات بیمار</h2>
+    <span class="form-date persian-date"></span>
+</div>
+
+<form method="post" action="{% url 'form4' %}">
+    {% csrf_token %}
+    
+    <!-- Patient Info Row -->
+    <div class="form-row">
+        <div class="form-col">
+            <label for="patient_name">نام بیمار:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+        </div>
+        <div class="form-col">
+            <label for="form_date">تاریخ:</label>
+            <input type="date" id="form_date" name="form_date" required>
+        </div>
+    </div>
+
+    <!-- Physician Information -->
+    <div class="form-group">
+        <label for="physician">پزشک معرف:</label>
+        <input type="text" id="physician" name="physician">
+    </div>
+
+    <!-- Physical Measurements -->
+    <div class="physiology-box">
+        شاخص های فیزیولوژیکی
+    </div>
+    
+    <div class="measurement-grid">
+        <div class="measurement-item">
+            <label for="birth_date">تاریخ تولد:</label>
+            <input type="date" id="birth_date" name="birth_date">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="gender">جنسیت بیمار:</label>
+            <select id="gender" name="gender">
+                <option value="">انتخاب کنید</option>
+                <option value="male">مرد</option>
+                <option value="female">زن</option>
+            </select>
+        </div>
+        
+        <div class="measurement-item">
+            <label for="height">قد بیمار:</label>
+            <input type="number" id="height" name="height" placeholder="سانتی متر">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="weight">وزن بیمار:</label>
+            <input type="number" id="weight" name="weight" placeholder="کیلوگرم">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="neck_circumference">اندازه دور گردن:</label>
+            <input type="number" id="neck_circumference" name="neck_circumference" placeholder="سانتی متر">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="bmi">BMI:</label>
+            <input type="number" id="bmi" name="bmi" readonly>
+        </div>
+        
+        <div class="measurement-item">
+            <label for="electronic_file">پست الکترونیکی:</label>
+            <input type="email" id="electronic_file" name="electronic_file">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="phone">تلفن همراه:</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="neck_size_1">نام یکی از وابستگان درجه یک:</label>
+            <input type="text" id="neck_size_1" name="neck_size_1">
+        </div>
+        
+        <div class="measurement-item">
+            <label for="neck_size_2">شماره تماس آن وابسته درجه یک:</label>
+            <input type="text" id="neck_size_2" name="neck_size_2">
+        </div>
+    </div>
+
+    <!-- Medical Questions -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">سوالات پزشکی</h3>
+        
+        <div class="form-group">
+            <label>آیا بیمار قبلا تست خواب انجام داده است؟</label>
+            <div class="yes-no-container">
+                <label><input type="radio" name="previous_sleep_test" value="yes"> بله</label>
+                <label><input type="radio" name="previous_sleep_test" value="no"> خیر</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>آیا بیمار قبلا تشخیص وقفه تنفسی داشته است؟</label>
+            <div class="yes-no-container">
+                <label><input type="radio" name="apnea_diagnosis" value="yes"> بله</label>
+                <label><input type="radio" name="apnea_diagnosis" value="no"> خیر</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>آیا بیمار از فشار درمانی راههای هوایی استفاده کرده است؟</label>
+            <div class="yes-no-container">
+                <label><input type="radio" name="airway_pressure" value="yes"> بله</label>
+                <label><input type="radio" name="airway_pressure" value="no"> خیر</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>آیا بیمار قبلا برای وقفه تنفسی جراحی داشته است؟</label>
+            <div class="yes-no-container">
+                <label><input type="radio" name="apnea_surgery" value="yes"> بله</label>
+                <label><input type="radio" name="apnea_surgery" value="no"> خیر</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>آیا بیمار از مکمل اکسیژن استفاده می کند؟</label>
+            <div class="yes-no-container">
+                <label><input type="radio" name="oxygen_supplement" value="yes"> بله</label>
+                <label><input type="radio" name="oxygen_supplement" value="no"> خیر</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Types -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">کدامیک از انواع تست ها انجام می گیرد:</h3>
+        
+        <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
+            <label><input type="checkbox" name="baseline_diagnostic"> Baseline Diagnostic Study</label>
+            <label><input type="checkbox" name="full_night_titration"> Full Night Titration Study</label>
+            <label><input type="checkbox" name="split_night"> Split Night Study</label>
+            <label><input type="checkbox" name="re_titration"> Re-Titration Study</label>
+            <label><input type="checkbox" name="home_sleep_testing"> Home Sleep Testing Study</label>
+            <label><input type="checkbox" name="MSLT"> MSLT </label>
+            <label><input type="checkbox" name="MWT"> MWT </label>
+       </div>
+    </div>
+
+    <!-- Interpreting Physician -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">Interpreting physician</h3>
+        
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="prof_sharafkhaneh"> Prof. Sharafkhaneh</label>
+            <label><input type="checkbox" name="prof_ansarin"> Prof. Ansarin</label>
+            <label><input type="checkbox" name="dr_mirzaaghazadeh"> Dr. MirzaAghzadeh</label>
+            <label><input type="checkbox" name="others"> Others:</label>
+            <input type="text" name="other_physician" style="width: 200px; margin-left: 10px;">
+        </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url 'form3' %}'">قبلی</button>
+        <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+    </div>
+</form>
+
+<script>
+// Calculate BMI automatically
+function calculateBMI() {
+    const height = document.getElementById('height').value;
+    const weight = document.getElementById('weight').value;
+    
+    if (height && weight) {
+        const heightInMeters = height / 100;
+        const bmi = weight / (heightInMeters * heightInMeters);
+        document.getElementById('bmi').value = bmi.toFixed(2);
+    }
+}
+
+document.getElementById('height').addEventListener('input', calculateBMI);
+document.getElementById('weight').addEventListener('input', calculateBMI);
+</script>
+{% endblock %}

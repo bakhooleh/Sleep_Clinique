@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}فرم اطلاعات بیمار - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block content %}
+<div class="form-header">
+    <h2 class="form-title">فرم اطلاعات بیمار</h2>
+    <span class="form-date persian-date"></span>
+</div>
+
+<form method="post" action="{% url 'form1' %}">
+    {% csrf_token %}
+    
+    <!-- Patient Information Section -->
+    <div class="form-section">
+        <div class="form-row">
+            <div class="form-col">
+                <label for="name">نام بیمار:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-col">
+                <label for="date">تاریخ:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+        </div>
+    </div>
+
+    <!-- Symptoms Checklist -->
+    <div class="scale-container">
+        <h3 style="margin-bottom: 20px; color: var(--primary-green);">علائم و نشانه‌ها</h3>
+        
+        <div class="symptom-grid">
+            <div class="symptom-item">
+                <input type="checkbox" id="snoring" name="snoring">
+                <label for="snoring">خرخر</label>
+            </div>
+            <div class="symptom-item">
+                <input type="checkbox" id="witnessed_apnea" name="witnessed_apnea">
+                <label for="witnessed_apnea">آپنه مشاهده شده</label>
+            </div>
+            <div class="symptom-item">
+                <input type="checkbox" id="morning_confusion" name="morning_confusion">
+                <label for="morning_confusion">گیجی صبح</label>
+            </div>
+            <div class="symptom-item">
+                <input type="checkbox" id="morning_dry_mouth" name="morning_dry_mouth">
+                <label for="morning_dry_mouth">خشکی دهان صبح</label>
+            </div>
+            <div class="symptom-item">
+                <input type="checkbox" id="morning_nausea" name="morning_nausea">
+                <label for="morning_nausea">تهوع صبح</label>
+            </div>
+            <div class="symptom-item">
+                <input type="checkbox" id="excessive_daytime_sleepiness" name="excessive_daytime_sleepiness">
+                <label for="excessive_daytime_sleepiness">خواب آلودگی مفرط روزانه</label>
+            </div>
+            <div class="symptom-item">
+                <input type="checkbox" id="depression" name="depression">
+                <label for="depression">افسردگی</label>
+            </div>
+            <div class="symptom_item">
+                <input type="checkbox" id="decreased_libido" name="decreased_libido">
+                <label for="decreased_libido">کاهش میل جنسی</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Treatment History Table -->
+    <div class="table-section" style="margin-top: 30px;">
+        <h3 style="margin-bottom: 15px; color: var(--primary-green);">سابقه درمان</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>نوع درمان</th>
+                    <th>تاریخ شروع</th>
+                    <th>تاریخ پایان</th>
+                    <th>نتیجه</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="treatment_type_1" style="border: none; width: 100%;"></td>
+                    <td><input type="date" name="treatment_start_1" style="border: none; width: 100%;"></td>
+                    <td><input type="date" name="treatment_end_1" style="border: none; width: 100%;"></td>
+                    <td><input type="text" name="treatment_result_1" style="border: none; width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="treatment_type_2" style="border: none; width: 100%;"></td>
+                    <td><input type="date" name="treatment_start_2" style="border: none; width: 100%;"></td>
+                    <td><input type="date" name="treatment_end_2" style="border: none; width: 100%;"></td>
+                    <td><input type="text" name="treatment_result_2" style="border: none; width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="treatment_type_3" style="border: none; width: 100%;"></td>
+                    <td><input type="date" name="treatment_start_3" style="border: none; width: 100%;"></td>
+                    <td><input type="date" name="treatment_end_3" style="border: none; width: 100%;"></td>
+                    <td><input type="text" name="treatment_result_3" style="border: none; width: 100%;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Additional Comments -->
+    <div class="form-group" style="margin-top: 30px;">
+        <label for="comments">توضیحات اضافی:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="در صورت نیاز توضیحات اضافی را وارد کنید..."></textarea>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="window.history.back()">بازگشت</button>
+        <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+    </div>
+</form>
+{% endblock %}

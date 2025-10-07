@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}مرکز تشخیص و درمان اختلالات خواب{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰ منو</button>
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo"><img src="{% static 'img/khayyam.png' %}" alt="Logo"></div>
+                    <div class="logo"><img class='logo-image' src="{% static 'img/logo.png' %}" alt="Logo"></div>
+                </div>
+                <div class="clinic-name">مرکز تشخیص و درمان<br>اختلالات خواب</div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+
+                    <li class="nav-item">
+                        <a href="{% url 'dashboard' %}" class="nav-link {% if active_form == 'dashboard' %}active{% endif %}">
+                            داشبورد
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form4' %}" class="nav-link {% if active_form == 'form4' %}active{% endif %}">
+                            علائم و نشانه ها
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form2' %}" class="nav-link {% if active_form == 'form2' %}active{% endif %}">
+                            مقیاس خواب آلودگی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form6' %}" class="nav-link {% if active_form == 'form6' %}active{% endif %}">
+                            معاینات بالینی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form3' %}" class="nav-link {% if active_form == 'form3' %}active{% endif %}">
+                            سابقه پزشکی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form8' %}" class="nav-link {% if active_form == 'form8' %}active{% endif %}">
+                            فرم تکمیلی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form5' %}" class="nav-link {% if active_form == 'form5' %}active{% endif %}">
+                            جدول علائم
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form1' %}" class="nav-link {% if active_form == 'form1' %}active{% endif %}">
+                            فرم اطلاعات بیمار
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'form7' %}" class="nav-link {% if active_form == 'form7' %}active{% endif %}">
+                            فرم PAP
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Django Messages -->
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="message {{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <!-- Form Container -->
+            <div class="form-container">
+                {% block content %}
+                <!-- Individual form content goes here -->
+                {% endblock %}
+            </div>
+        </main>
+    </div>
+    {% block extra_js %}<script src="{% static 'js/base.js' %}"></script>{% endblock %}
+</body>
+</html>

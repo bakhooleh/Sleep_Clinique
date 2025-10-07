@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% block title %}فرم تکمیلی - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/from8.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-header">
+    <h2 class="form-title">فرم تکمیلی</h2>
+    <span class="form-date persian-date"></span>
+</div>
+
+<form method="post" action="{% url 'form8' %}">
+    {% csrf_token %}
+    
+    <!-- Patient Info Row -->
+    <div class="form-row">
+        <div class="form-col">
+            <label for="patient_name">نام بیمار:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+        </div>
+        <div class="form-col">
+            <label for="form_date">تاریخ:</label>
+            <input type="date" id="form_date" name="form_date" required>
+        </div>
+    </div>
+
+    <!-- Additional Information Header -->
+    <div class="supplement-header">
+        لطفا اطلاعات مربوط به بستری بیمارستانی خود را در صورت وجود با ذکر طول و تاریخ قید نمایید (5 حالت که به خاطر دارید):
+    </div>
+
+    <!-- Hospitalization History -->
+    <div class="scale-container">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">سابقه بستری</h3>
+        <textarea class="large-textarea" name="hospitalization_history" 
+                  placeholder="لطفا جزئیات مربوط به بستری های قبلی خود را با ذکر تاریخ، مدت بستری و دلیل آن وارد نمایید..."></textarea>
+    </div>
+
+    <!-- Medication and Treatment -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">لطفا جزئیات مهم در ارتباط با وضعیت سلامتی و درمانی خود را ذکر فرمایید:</h3>
+        <textarea class="large-textarea" name="health_treatment_details" 
+                  placeholder="داروهای مصرفی، درمان های در حال انجام، مشکلات خاص سلامتی و سایر موارد مهم را ذکر کنید..."></textarea>
+    </div>
+
+    <!-- Study Information -->
+    <div class="study-info-box">
+        <h4>اطلاعات مطالعه</h4>
+        <p style="margin-bottom: 15px;">
+            در آینده آیا تمایل دارید در تحقیقات و پژوهش های ما در خصوص بیماری ها و داروهای کیفی را مصرف نمودید، باید 
+            این تحقیقات در بیمارستان را جهت دیده و دکتر به دنبال شما برای بررسی باشد. در صورت تمایل به مصرف این را به اوراه بررسی بیمارید 
+            و دقت دارو در حقیقت شما که اعتبار داشته و برای درمان آن داروهایی را مصرف نموده لذا فکر کنید.
+        </p>
+        
+        <div class="info-grid">
+            <div>
+                <label for="willing_participate">نام دارو و پژوهش:</label>
+                <input type="text" id="willing_participate" name="willing_participate">
+            </div>
+            <div>
+                <label for="medication_name">کیفیت که استفاده کرده اید:</label>
+                <input type="text" id="medication_name" name="medication_name">
+            </div>
+            <div>
+                <label for="dosage">مقدار مصرف:</label>
+                <input type="text" id="dosage" name="dosage">
+            </div>
+            <div>
+                <label for="duration">چند قرص:</label>
+                <input type="text" id="duration" name="duration">
+            </div>
+            <div>
+                <label for="side_effect_1">برای چه بیماری:</label>
+                <input type="text" id="side_effect_1" name="side_effect_1">
+            </div>
+            <div>
+                <label for="side_effect_2">برای چه دیدی:</label>
+                <input type="text" id="side_effect_2" name="side_effect_2">
+            </div>
+            <div>
+                <label for="side_effect_3">خود مصرف:</label>
+                <input type="text" id="side_effect_3" name="side_effect_3">
+            </div>
+            <div>
+                <label for="other_notes">بله / خیر:</label>
+                <select id="other_notes" name="other_notes">
+                    <option value="">انتخاب کنید</option>
+                    <option value="yes">بله</option>
+                    <option value="no">خیر</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Treatment Grid -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">اطلاعات تکمیلی درمان</h3>
+        
+        <!-- Empty grid for additional treatment information -->
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;">
+            <!-- Row headers -->
+            <div style="grid-column: span 6;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>نام دارو و پژوهش</th>
+                            <th>کیفیت که استفاده کرده اید</th>
+                            <th>مقدار مصرف</th>
+                            <th>چند قرص</th>
+                            <th>برای چه بیماری</th>
+                            <th>خود مصرف / بله / خیر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="med_1_name" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_1_quality" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_1_dosage" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_1_quantity" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_1_condition" style="border: none; width: 100%;"></td>
+                            <td>
+                                <select name="med_1_self" style="border: none; width: 100%;">
+                                    <option value="">---</option>
+                                    <option value="yes">بله</option>
+                                    <option value="no">خیر</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="med_2_name" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_2_quality" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_2_dosage" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_2_quantity" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_2_condition" style="border: none; width: 100%;"></td>
+                            <td>
+                                <select name="med_2_self" style="border: none; width: 100%;">
+                                    <option value="">---</option>
+                                    <option value="yes">بله</option>
+                                    <option value="no">خیر</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="med_3_name" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_3_quality" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_3_dosage" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_3_quantity" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_3_condition" style="border: none; width: 100%;"></td>
+                            <td>
+                                <select name="med_3_self" style="border: none; width: 100%;">
+                                    <option value="">---</option>
+                                    <option value="yes">بله</option>
+                                    <option value="no">خیر</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="med_4_name" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_4_quality" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_4_dosage" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_4_quantity" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_4_condition" style="border: none; width: 100%;"></td>
+                            <td>
+                                <select name="med_4_self" style="border: none; width: 100%;">
+                                    <option value="">---</option>
+                                    <option value="yes">بله</option>
+                                    <option value="no">خیر</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="med_5_name" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_5_quality" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_5_dosage" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_5_quantity" style="border: none; width: 100%;"></td>
+                            <td><input type="text" name="med_5_condition" style="border: none; width: 100%;"></td>
+                            <td>
+                                <select name="med_5_self" style="border: none; width: 100%;">
+                                    <option value="">---</option>
+                                    <option value="yes">بله</option>
+                                    <option value="no">خیر</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Notes -->
+    <div class="final-notes">
+        <h4 style="color: #cc6600; margin-bottom: 15px;">یادداشت های نهایی</h4>
+        <p>لطفا هرگونه اطلاعات تکمیلی که فکر می کنید برای پزشک معالج مفید خواهد بود را در این قسمت وارد نمایید:</p>
+        <textarea name="final_notes" rows="6" style="width: 100%; margin-top: 10px;" 
+                  placeholder="توضیحات تکمیلی..."></textarea>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url 'form7' %}'">قبلی</button>
+        <button type="submit" class="btn btn-primary">ذخیره و ارسال نهایی</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+
+{% block title %}مقیاس خواب آلودگی اپورث - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block content %}
+<div class="form-header">
+    <h2 class="form-title">پرسشنامه اطلاعاتی مرکز خواب</h2>
+    <span class="form-date persian-date"></span>
+</div>
+
+<form method="post" action="{% url 'form2' %}">
+    {% csrf_token %}
+    
+    <!-- Patient Info Row -->
+    <div class="form-row">
+        <div class="form-col">
+            <label for="patient_name">نام بیمار:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+        </div>
+        <div class="form-col">
+            <label for="form_date">تاریخ:</label>
+            <input type="date" id="form_date" name="form_date" required>
+        </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions-box" style="background-color: var(--light-green); padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p style="font-weight: 600; margin-bottom: 10px;">
+   اگر در موقعیت هایی که در زیر توصیف شده‌اند قرار بگیرید، چقدر احتمال دارد که به خواب بروید یا چرت بزنید؟ (نه اینکه فقط احساس خستگی کنید)
+        </p>
+        <p>این پرسشنامه مربوط به روش معمول زندگی شما در زمان اخیر است.</p>
+        <p>            حتی اگر بعضی از این موارد را اخیرا انجام نداده اید سعی کنید با توجه به کارهای مشابه مشخص کنید که چنین حالاتی چه اثری روی شما خواهد گذاشت؟ 
+</p>
+<p>از مقیاس زیر برای انتخاب <b> مناسب ترین گزینه</b> برای هر موقعیت استفاده کنید:</p>
+    </div>
+
+    <!-- Rating Scale Legend -->
+    <div class="scale-legend" style="display: flex; justify-content: space-around; margin: 20px 0; padding: 15px; background-color: #f5f5f5; border-radius: 8px;">
+        <div class="scale-item">
+            <span class="scale-number" style="font-weight: bold; color: var(--primary-green);">0</span>
+            <span> = هرگز چرت نمی زنم</span>
+        </div>
+        <div class="scale-item">
+            <span class="scale-number" style="font-weight: bold; color: var(--primary-green);">1</span>
+            <span> = به احتمال کم چرت می زنم</span>
+        </div>
+        <div class="scale-item">
+            <span class="scale-number" style="font-weight: bold; color: var(--primary-green);">2</span>
+            <span> =به احتمال متوسط چرت می زنم</span>
+        </div>
+        <div class="scale-item">
+            <span class="scale-number" style="font-weight: bold; color: var(--primary-green);">3</span>
+            <span> = به احتمال زیاد چرت می زنم</span>
+        </div>
+    </div>
+
+    <!-- Epworth Sleepiness Scale Table -->
+    <div class="scale-container" style="background-color: var(--primary-green); color: white; padding: 5px; border-radius: 8px 8px 0 0;">
+        <h3 style="text-align: center; margin: 10px 0;">EPWORTH SLEEPINESS SCALE</h3>
+    </div>
+    
+    <table class="data-table" style="margin-top: 0;">
+        <tbody>
+            <tr>
+                <td style="text-align: right; padding: 15px;">نشستن و مطالعه کردن</td>
+                <td style="width: 300px;">
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="sitting_reading" value="0"> 0</label>
+                        <label><input type="radio" name="sitting_reading" value="1"> 1</label>
+                        <label><input type="radio" name="sitting_reading" value="2"> 2</label>
+                        <label><input type="radio" name="sitting_reading" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">تماشای تلویزیون</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="watching_tv" value="0"> 0</label>
+                        <label><input type="radio" name="watching_tv" value="1"> 1</label>
+                        <label><input type="radio" name="watching_tv" value="2"> 2</label>
+                        <label><input type="radio" name="watching_tv" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">نشستن غیر فعال در یک مکان عمومی (به عنوان مثال تئاتر یا جلسه سخنرانی)</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="sitting_inactive" value="0"> 0</label>
+                        <label><input type="radio" name="sitting_inactive" value="1"> 1</label>
+                        <label><input type="radio" name="sitting_inactive" value="2"> 2</label>
+                        <label><input type="radio" name="sitting_inactive" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">نشستن در یک اتومبیل به عنوان مسافر برای یک ساعت بدون وقفه</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="car_passenger" value="0"> 0</label>
+                        <label><input type="radio" name="car_passenger" value="1"> 1</label>
+                        <label><input type="radio" name="car_passenger" value="2"> 2</label>
+                        <label><input type="radio" name="car_passenger" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">دراز کشیدن برای استراحت در بعدازظهر در صورت مهیا بودن شرایط</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="lying_down" value="0"> 0</label>
+                        <label><input type="radio" name="lying_down" value="1"> 1</label>
+                        <label><input type="radio" name="lying_down" value="2"> 2</label>
+                        <label><input type="radio" name="lying_down" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">نشستن و با کسی صحبت کردن</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="sitting_talking" value="0"> 0</label>
+                        <label><input type="radio" name="sitting_talking" value="1"> 1</label>
+                        <label><input type="radio" name="sitting_talking" value="2"> 2</label>
+                        <label><input type="radio" name="sitting_talking" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">آرام نشستن بعد از نهار</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="after_lunch" value="0"> 0</label>
+                        <label><input type="radio" name="after_lunch" value="1"> 1</label>
+                        <label><input type="radio" name="after_lunch" value="2"> 2</label>
+                        <label><input type="radio" name="after_lunch" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 15px;">بودن در یک وسیله نقلیه در حالی که برای دقایقی در ترافیک متوقف است</td>
+                <td>
+                    <div class="radio-group" style="justify-content: space-around;">
+                        <label><input type="radio" name="in_traffic" value="0"> 0</label>
+                        <label><input type="radio" name="in_traffic" value="1"> 1</label>
+                        <label><input type="radio" name="in_traffic" value="2"> 2</label>
+                        <label><input type="radio" name="in_traffic" value="3"> 3</label>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Additional Questions Section -->
+         <div class="scale-container" style="background-color: var(--primary-green); color: white; padding: 5px; border-radius: 8px 8px 0 0;">
+        <h3 style="text-align: center; margin: 10px 0;">بررسی اجمالی علائم خواب (لطفا موردی را که به بهترین نحو شما را توصیف می کند انتخاب کنید) </h3>
+    </div>
+    <div class="scale-container" style="margin-top: 30px;">
+        
+        <div class="form-group">
+            <label>با صدای بلند خروپف می کنم.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="loud_snoring" value="yes"> بله</label>
+                <label><input type="radio" name="loud_snoring" value="no"> خیر</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>در حالیکه نفس نفس می زنم از خواب بیدار می شوم.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="wake_breathless" value="yes"> بله</label>
+                <label><input type="radio" name="wake_breathless" value="no"> خیر</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>صبح ها خسته از خواب بیدار می شوم.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="wake_tired" value="yes"> بله</label>
+                <label><input type="radio" name="wake_tired" value="no"> خیر</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>برای اینکه خوابم ببرد مشکل دارم و یا اینکه نمیتوانم بخوبی بخوابم.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="sleep_difficulty" value="yes"> بله</label>
+                <label><input type="radio" name="sleep_difficulty" value="no"> خیر</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>خواب بسیار ناآرامی دارم.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="restful_sleep" value="yes"> بله</label>
+                <label><input type="radio" name="restful_sleep" value="no"> خیر</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>خوابم در اثر اتفاقات غیر معمول به هم می خورد. (برای مثال کابوس های شبانه، راه رفتن در خواب، رویاهای شبانه، گاز گرفتن زبان، شب ادراری و غیره)</label>
+            <div class="radio-group">
+                <label><input type="radio" name="unusual_behaviors" value="yes"> بله</label>
+                <label><input type="radio" name="unusual_behaviors" value="no"> خیر</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>در حال رانندگی خوابم می برد.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="sleeping_driving" value="yes"> بله</label>
+                <label><input type="radio" name="sleeping_driving" value="no"> خیر</label>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="other_symptoms">به من می گویند که هنگام خوابیدن نفس نمی کشم. این حرف را شخص ذیل به من گفته است.</label>
+            <input type="text" id="other_symptoms" name="other_symptoms" placeholder="توضیحات...">
+        </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url 'form1' %}'">قبلی</button>
+        <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block title %}سابقه پزشکی - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block content %}
+<div class="form-header">
+    <h2 class="form-title">برنامه خواب</h2>
+    <span class="form-date persian-date"></span>
+</div>
+
+<form method="post" action="{% url 'form3' %}">
+    {% csrf_token %}
+    
+    <!-- Patient Info Row -->
+    <div class="form-row">
+        <div class="form-col">
+            <label for="patient_name">نام بیمار:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+        </div>
+        <div class="form-col">
+            <label for="form_date">تاریخ:</label>
+            <input type="date" id="form_date" name="form_date" required>
+        </div>
+    </div>
+
+    <!-- Sleep Schedule Section -->
+    <div class="scale-container" style="margin-top: 20px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">برنامه خواب</h3>
+        
+        <div class="form-group">
+            <label>هنگام خوابیدن چقدر می گذرد تا که فکر شده ام و می پردازم کار کنید:</label>
+            <textarea name="sleep_thoughts" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>بعد از یک روز، چقدر زمان می گیرد کنیم قلع شده نیمی توانم کار کنید:</label>
+            <textarea name="wake_time" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>وقتی صبح از خواب بیدار می شوم قدم صبوری معمولا روز دارم:</label>
+            <textarea name="morning_routine" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>(توضیحا) آنچه می دانیم بیدار هستیم:</label>
+            <textarea name="wake_activities" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>درست بعد یا قبل از چرت زدن آنچه که دانیم که بیدار هستم ولی توضیحات خواب مانندی دارم:</label>
+            <textarea name="drowsy_activities" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>وقتی خواب از صبح بیدار می شوم حس قلع بودن دانیم نمی توانم حرکت کنم:</label>
+            <textarea name="sleep_paralysis" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>وقتی می خندم زانوانم سست می شوند. وقتی می خندم، عصبانی می شوم و یا در احساسات غرق می شوم به یکباره چار سستی وضعف عضلات می شوم. وقتی قلع شدگی وضع موثر و ثابتی درحرکت؟</label>
+            <textarea name="cataplexy" rows="3"></textarea>
+        </div>
+    </div>
+
+    <!-- Medical Problems Checklist -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-green); margin-bottom: 20px;">مشکلات پزشکی</h3>
+        
+        <div class="symptom-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                <label style="margin: 0;">کدام یک از مشکلات زیر را در حال حاضر دارید و یا داشته اید؟ آکنون / گذشته</label>
+            </div>
+            <div></div>
+            
+            <div class="symptom-item">
+                <label>دیابت</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="diabetes_now"> آکنون</label>
+                    <label><input type="checkbox" name="diabetes_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>فشار خون بالا</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="hypertension_now"> آکنون</label>
+                    <label><input type="checkbox" name="hypertension_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>سکته مغزی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="stroke_now"> آکنون</label>
+                    <label><input type="checkbox" name="stroke_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>مشکلات قلبی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="heart_problems_now"> آکنون</label>
+                    <label><input type="checkbox" name="heart_problems_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>حملات قلبی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="heart_attack_now"> آکنون</label>
+                    <label><input type="checkbox" name="heart_attack_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>آنژین / گلو درد</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="angina_now"> آکنون</label>
+                    <label><input type="checkbox" name="angina_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>پرخیت موتن یا آغیرم</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="arrhythmia_now"> آکنون</label>
+                    <label><input type="checkbox" name="arrhythmia_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>آسم</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="asthma_now"> آکنون</label>
+                    <label><input type="checkbox" name="asthma_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>سل</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="tuberculosis_now"> آکنون</label>
+                    <label><input type="checkbox" name="tuberculosis_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>سایر بیماری های ریوی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="lung_disease_now"> آکنون</label>
+                    <label><input type="checkbox" name="lung_disease_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>آرتریاتی بینی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="nasal_arthritis_now"> آکنون</label>
+                    <label><input type="checkbox" name="nasal_arthritis_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>گرفتگی بینی / آلرژیش بینی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="nasal_congestion_now"> آکنون</label>
+                    <label><input type="checkbox" name="nasal_congestion_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>مشکلات جونوتی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="jaw_problems_now"> آکنون</label>
+                    <label><input type="checkbox" name="jaw_problems_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>مشکلات مغزی / عصبی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="neurological_now"> آکنون</label>
+                    <label><input type="checkbox" name="neurological_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>بیماری های روستات</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="prostate_now"> آکنون</label>
+                    <label><input type="checkbox" name="prostate_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>ناتوانی اعصابی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="nerve_disability_now"> آکنون</label>
+                    <label><input type="checkbox" name="nerve_disability_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>مشکل الکل</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="alcohol_problem_now"> آکنون</label>
+                    <label><input type="checkbox" name="alcohol_problem_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>مشکل مواد اعتیاد آور</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="addiction_now"> آکنون</label>
+                    <label><input type="checkbox" name="addiction_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>افسردگی</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="depression_now"> آکنون</label>
+                    <label><input type="checkbox" name="depression_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>سروخ</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="sorookh_now"> آکنون</label>
+                    <label><input type="checkbox" name="sorookh_past"> گذشته</label>
+                </div>
+            </div>
+            
+            <div class="symptom-item">
+                <label>حملات از حال رفتن</label>
+                <div style="display: flex; gap: 20px;">
+                    <label><input type="checkbox" name="fainting_now"> آکنون</label>
+                    <label><input type="checkbox" name="fainting_past"> گذشته</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sleep Quality Questions -->
+    <div class="scale-container" style="margin-top: 30px;">
+        <div class="form-group">
+            <label>خیلی بد</label>
+            <div class="radio-group">
+                <label><input type="radio" name="sleep_quality_1" value="very_bad"> خیلی بد</label>
+                <label><input type="radio" name="sleep_quality_1" value="bad"> بد</label>
+                <label><input type="radio" name="sleep_quality_1" value="average"> متوسط</label>
+                <label><input type="radio" name="sleep_quality_1" value="good"> خوب</label>
+                <label><input type="radio" name="sleep_quality_1" value="excellent"> عالی</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url 'form2' %}'">قبلی</button>
+        <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ patient.first_name }} {{ patient.last_name }} - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/patient_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="patient-detail-container">
+    <!-- Patient Header -->
+    <div class="patient-header">
+        <div class="patient-info">
+            <h2>{{ patient.first_name }} {{ patient.last_name }}</h2>
+            <div class="patient-meta">
+                <span><i class="fas fa-id-card"></i> شناسه: {{ patient.patient_id }}</span>
+                <span><i class="fas fa-phone"></i> {{ patient.phone }}</span>
+                <span><i class="fas fa-calendar"></i> سن: {{ patient.age }} سال</span>
+                <span><i class="fas fa-venus-mars"></i> {{ patient.get_gender_display }}</span>
+            </div>
+        </div>
+        <div class="patient-actions">
+            <a href="{% url 'patient_app:form1_create' patient.id %}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> فرم جدید
+            </a>
+            <a href="{% url 'patient_app:patient_report' patient.id %}" class="btn btn-secondary">
+                <i class="fas fa-print"></i> گزارش
+            </a>
+        </div>
+    </div>
+
+    <!-- Patient Details Grid -->
+    <div class="details-grid">
+        <!-- Basic Information -->
+        <div class="detail-card">
+            <h3><i class="fas fa-user"></i> اطلاعات پایه</h3>
+            <table class="detail-table">
+                <tr>
+                    <td>کد ملی:</td>
+                    <td>{{ patient.national_id|default:"-" }}</td>
+                </tr>
+                <tr>
+                    <td>تاریخ تولد:</td>
+                    <td>{{ patient.birth_date|date:"Y/m/d" }}</td>
+                </tr>
+                <tr>
+                    <td>ایمیل:</td>
+                    <td>{{ patient.email|default:"-" }}</td>
+                </tr>
+                <tr>
+                    <td>تماس اضطراری:</td>
+                    <td>{{ patient.emergency_contact_name|default:"-" }} - {{ patient.emergency_contact_phone|default:"-" }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Physical Measurements -->
+        <div class="detail-card">
+            <h3><i class="fas fa-weight"></i> اندازه‌گیری‌های فیزیکی</h3>
+            <table class="detail-table">
+                <tr>
+                    <td>قد:</td>
+                    <td>{{ patient.height }} سانتی‌متر</td>
+                </tr>
+                <tr>
+                    <td>وزن:</td>
+                    <td>{{ patient.weight }} کیلوگرم</td>
+                </tr>
+                <tr>
+                    <td>BMI:</td>
+                    <td>{{ patient.bmi|floatformat:1 }}</td>
+                </tr>
+                <tr>
+                    <td>دور گردن:</td>
+                    <td>{{ patient.neck_circumference|default:"-" }} سانتی‌متر</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Forms Timeline -->
+    <div class="forms-timeline">
+        <h3><i class="fas fa-history"></i> تاریخچه فرم‌ها</h3>
+        
+        <!-- Tabs for different form types -->
+        <div class="form-tabs">
+            <button class="tab-button active" onclick="showFormType('all')">همه</button>
+            <button class="tab-button" onclick="showFormType('info')">اطلاعات بیمار</button>
+            <button class="tab-button" onclick="showFormType('epworth')">مقیاس خواب‌آلودگی</button>
+            <button class="tab-button" onclick="showFormType('medical')">سابقه پزشکی</button>
+            <button class="tab-button" onclick="showFormType('physical')">معاینات</button>
+            <button class="tab-button" onclick="showFormType('studies')">مطالعات خواب</button>
+        </div>
+
+        <!-- All Forms -->
+        <div class="form-section" id="all-forms">
+            <div class="timeline">
+                {% for form in all_forms %}
+                <div class="timeline-item">
+                    <div class="timeline-date">{{ form.form_date|date:"Y/m/d" }}</div>
+                    <div class="timeline-content">
+                        <h4>{{ form.form_type_display }}</h4>
+                        <p>{{ form.summary }}</p>
+                        <a href="{{ form.update_url }}" class="btn btn-sm btn-info">مشاهده/ویرایش</a>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="no-data">هیچ فرمی ثبت نشده است</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Patient Information Forms -->
+        <div class="form-section" id="info-forms" style="display: none;">
+            {% for form in information_forms %}
+            <div class="form-card">
+                <div class="form-card-header">
+                    <span>تاریخ: {{ form.form_date|date:"Y/m/d" }}</span>
+                    <a href="{% url 'patient_app:form1_update' patient.id form.id %}" class="btn btn-sm btn-info">
+                        ویرایش
+                    </a>
+                </div>
+                <div class="form-card-body">
+                    <p><strong>علائم:</strong></p>
+                    <ul>
+                        {% if form.snoring %}<li>خرخر</li>{% endif %}
+                        {% if form.witnessed_apnea %}<li>آپنه مشاهده شده</li>{% endif %}
+                        {% if form.morning_confusion %}<li>گیجی صبح</li>{% endif %}
+                        {% if form.excessive_daytime_sleepiness %}<li>خواب‌آلودگی روزانه</li>{% endif %}
+                    </ul>
+                    {% if form.comments %}
+                    <p><strong>توضیحات:</strong> {{ form.comments }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <p class="no-data">فرم اطلاعات بیماری ثبت نشده است</p>
+            {% endfor %}
+        </div>
+
+        <!-- Epworth Forms -->
+        <div class="form-section" id="epworth-forms" style="display: none;">
+            {% for form in epworth_forms %}
+            <div class="form-card">
+                <div class="form-card-header">
+                    <span>تاریخ: {{ form.form_date|date:"Y/m/d" }}</span>
+                    <span class="score-badge">نمره: {{ form.total_score }}</span>
+                    <a href="{% url 'patient_app:form2_update' patient.id form.id %}" class="btn btn-sm btn-info">
+                        ویرایش
+                    </a>
+                </div>
+                <div class="form-card-body">
+                    <div class="score-interpretation">
+                        {% if form.total_score < 10 %}
+                            <span class="badge badge-success">خواب‌آلودگی طبیعی</span>
+                        {% elif form.total_score < 12 %}
+                            <span class="badge badge-warning">خواب‌آلودگی خفیف</span>
+                        {% elif form.total_score < 16 %}
+                            <span class="badge badge-warning">خواب‌آلودگی متوسط</span>
+                        {% else %}
+                            <span class="badge badge-danger">خواب‌آلودگی شدید</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="no-data">مقیاس خواب‌آلودگی ثبت نشده است</p>
+            {% endfor %}
+        </div>
+
+        <!-- Medical History Forms -->
+        <div class="form-section" id="medical-forms" style="display: none;">
+            {% for form in medical_histories %}
+            <div class="form-card">
+                <div class="form-card-header">
+                    <span>تاریخ: {{ form.form_date|date:"Y/m/d" }}</span>
+                    <span>کیفیت خواب: {{ form.get_sleep_quality_display|default:"-" }}</span>
+                </div>
+                <div class="form-card-body">
+                    <p><strong>شرایط پزشکی فعلی:</strong></p>
+                    <ul>
+                        {% if form.diabetes_current %}<li>دیابت</li>{% endif %}
+                        {% if form.hypertension_current %}<li>فشار خون بالا</li>{% endif %}
+                        {% if form.heart_problems_current %}<li>مشکلات قلبی</li>{% endif %}
+                        {% if form.asthma_current %}<li>آسم</li>{% endif %}
+                    </ul>
+                </div>
+            </div>
+            {% empty %}
+            <p class="no-data">سابقه پزشکی ثبت نشده است</p>
+            {% endfor %}
+        </div>
+
+        <!-- Sleep Study Results -->
+        <div class="form-section" id="studies-forms" style="display: none;">
+            {% for study in study_results %}
+            <div class="form-card">
+                <div class="form-card-header">
+                    <span>تاریخ: {{ study.study_date|date:"Y/m/d" }}</span>
+                    <span>نوع: {{ study.get_study_type_display }}</span>
+                </div>
+                <div class="form-card-body">
+                    <div class="study-results">
+                        <div class="result-item">
+                            <label>AHI:</label>
+                            <span>{{ study.ahi|default:"-" }}</span>
+                            <span class="badge {% if study.get_ahi_severity == 'Severe' %}badge-danger{% elif study.get_ahi_severity == 'Moderate' %}badge-warning{% else %}badge-success{% endif %}">
+                                {{ study.get_ahi_severity }}
+                            </span>
+                        </div>
+                        <div class="result-item">
+                            <label>حداقل اشباع اکسیژن:</label>
+                            <span>{{ study.min_oxygen_saturation|default:"-" }}%</span>
+                        </div>
+                        <div class="result-item">
+                            <label>بازده خواب:</label>
+                            <span>{{ study.sleep_efficiency|default:"-" }}%</span>
+                        </div>
+                    </div>
+                    {% if study.recommendations %}
+                    <p><strong>توصیه‌ها:</strong> {{ study.recommendations }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <p class="no-data">مطالعه خوابی ثبت نشده است</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+function showFormType(type) {
+    // Hide all form sections
+    document.querySelectorAll('.form-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected form section
+    document.getElementById(type + '-forms').style.display = 'block';
+    
+    // Add active class to clicked tab
+    event.target.classList.add('active');
+}
+</script>
+{% endblock %}
