@@ -5,6 +5,8 @@
 {% block extra_css %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/from6.css' %}">
+<link rel="stylesheet" href="{% static 'css/form4.css' %}">
+
 {% endblock %}
 
 {% block content %}
@@ -30,33 +32,64 @@
 
     <!-- Sleep Pattern Questions -->
     <div class="scale-container" style="margin-top: 20px;">
+
+
+
+    <div class="form-row">
+                <div class="form-col">
+
         <div class="form-group">
             <label>در طول هفته چه ساعتی می خوابید؟</label>
-            <input type="time" name="weekday_bedtime" style="width: 150px;">
+           <input type="time" name="weekday_bedtime" style="width: 150px;">
+        </div>
+        </div>
+      <div class="form-col">
+
+        <div class="form-group">
+            <label>وسط روز چرت می زنید؟ </label>
+             <div class="yes-no-container">
+                <label><input type="radio" name="midday_nap" value="yes"> بله</label>
+                <label><input type="radio" name="midday_nap" value="no"> خیر</label>
+            </div>        </div>
         </div>
         
+    </div>    
+
+        <div class="form-row">
+
         <div class="form-group">
             <label>در طول هفته چه ساعتی از خواب بیدار می شوید؟</label>
             <input type="time" name="weekday_waketime" style="width: 150px;">
         </div>
-        
+        </div>
+            <div class="form-row">
+
         <div class="form-group">
             <label>آخر هفته ها چه ساعتی می خوابید؟</label>
             <input type="time" name="weekend_bedtime" style="width: 150px;">
         </div>
-        
+        </div>
+
+            <div class="form-row">
+
         <div class="form-group">
             <label>آخر هفته ها چه ساعتی از خواب بیدار می شوید؟</label>
             <input type="time" name="weekend_waketime" style="width: 150px;">
         </div>
-        
-        <div class="form-group">
-            <label>آیا به صورت شیفتی کار می کنید؟ اگر بلدیداخیر:</label>
-            <textarea name="shift_work" rows="2"></textarea>
         </div>
+            <div class="form-row">
+
+        <div class="form-group">
+            <label>آیا به صورت شیفتی کار می کنید؟ </label>
+                <div class="yes-no-container">
+                <label><input type="radio" name="shift_work" value="yes"> بله</label>
+                <label><input type="radio" name="shift_work" value="no"> خیر</label>
+            </div>
+        </div>
+   </div>
         
         <div class="form-group">
-            <label>اگر جوابتان مثبت است لطفا توضیح نوع کاری خود را توضیح دهید:</label>
+            <label>اگر جوابتان بلی است لطفا نوع شیفت کاری خود را توضیح دهید:</label>
             <textarea name="shift_work_description" rows="3"></textarea>
         </div>
     </div>
