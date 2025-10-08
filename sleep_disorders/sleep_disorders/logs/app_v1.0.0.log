@@ -3635,3 +3635,34 @@ django.template.exceptions.TemplateDoesNotExist: sleep_clinic/patient_report.htm
 [2025-10-07 15:08:24,595] INFO django.server "GET /static/js/base.js HTTP/1.1" 200 1170
 [2025-10-07 15:08:25,056] WARNING django.request Not Found: /favicon.ico
 [2025-10-07 15:08:25,056] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-08 13:16:21,839] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2025-10-08 13:16:28,973] INFO django.server "GET / HTTP/1.1" 200 9992
+[2025-10-08 13:16:29,047] WARNING django.request Not Found: /favicon.ico
+[2025-10-08 13:16:29,048] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-08 13:16:32,101] INFO django.server "GET / HTTP/1.1" 200 9992
+[2025-10-08 13:16:34,240] INFO django.server "GET /form2/ HTTP/1.1" 200 16396
+[2025-10-08 13:23:21,722] INFO django.server "GET /form3/ HTTP/1.1" 200 16238
+[2025-10-08 13:23:40,894] INFO django.server "GET /form6/ HTTP/1.1" 200 14219
+[2025-10-08 13:23:40,905] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:23:44,628] INFO django.server "GET /form2/ HTTP/1.1" 200 16396
+[2025-10-08 13:23:53,357] INFO django.server "GET /form6/ HTTP/1.1" 200 14219
+[2025-10-08 13:23:53,367] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:24:56,128] INFO django.server "GET /form2/ HTTP/1.1" 200 16396
+[2025-10-08 13:24:58,007] INFO django.server "GET /form6/ HTTP/1.1" 200 14219
+[2025-10-08 13:24:58,017] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:27:56,633] INFO django.server "GET /form6/ HTTP/1.1" 200 9523
+[2025-10-08 13:27:56,646] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:28:10,302] INFO django.server "GET /form6/ HTTP/1.1" 200 9206
+[2025-10-08 13:28:10,312] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:28:59,621] INFO django.server "GET /form6/ HTTP/1.1" 200 9240
+[2025-10-08 13:28:59,631] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:30:10,213] INFO django.server "GET /form6/ HTTP/1.1" 200 9238
+[2025-10-08 13:30:10,223] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:31:26,242] INFO django.server "GET /form6/ HTTP/1.1" 200 9238
+[2025-10-08 13:31:26,254] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:32:41,879] INFO django.server "GET /form6/ HTTP/1.1" 200 9238
+[2025-10-08 13:32:41,889] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:34:16,184] INFO django.server "GET /form6/ HTTP/1.1" 200 9246
+[2025-10-08 13:34:16,193] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 13:35:56,350] INFO django.server "GET /form6/ HTTP/1.1" 200 9282
+[2025-10-08 13:35:56,361] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966

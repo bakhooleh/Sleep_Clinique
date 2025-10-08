@@ -37,7 +37,6 @@
 
     <div class="form-row">
                 <div class="form-col">
-
         <div class="form-group">
             <label>در طول هفته چه ساعتی می خوابید؟</label>
            <input type="time" name="weekday_bedtime" style="width: 150px;">
@@ -94,75 +93,30 @@
         </div>
     </div>
 
-    <!-- Throat Examination -->
-    <div class="green-section-header">آیا یکی از موارد زیر در مقایس در گلو و دهان مربوط به شما وجود دارد؟ لطفا انتخاب نماییدکه در صورت وجود علامت همیشه ای کدام قسمت می باشد</div>
     
-    <div class="clinical-grid">
-        <div class="clinical-item">
-            <h4 style="margin-bottom: 10px;">ناحیه گلوی</h4>
-            <div class="checkbox-list">
-                <label><input type="checkbox" name="small_mouth_throat"> دهان کوچک و گلوی باریک</label>
-                <label><input type="checkbox" name="small_mouth_soft_palate"> دهان کوچک با یادنمایان کام نرم</label>
-                <label><input type="checkbox" name="normal_mouth_soft_palate"> دهان طبیعی با یادنمایان کام نرم</label>
-                <label><input type="checkbox" name="normal_mouth_visible_uvula"> دهان طبیعی در حالیکه بیشتر از کام نرم دیده می شود</label>
-                <label><input type="checkbox" name="normal_mouth_visible_tonsils"> دهان طبیعی با یادنمایان تونسیل ها</label>
-                <label><input type="checkbox" name="mouth_with_large_tonsils"> دهانی در حالیکه درآن کوشیدند شده توسط لوزها دیده می شود</label>
-                <label><input type="checkbox" name="large_tongue"> صیح زبان بیدار خواب</label>
-                <label><input type="checkbox" name="tongue_obstruction"> کام گرفتن زبان در خواب</label>
-                <label><input type="checkbox" name="sleep_with_open_mouth"> انجام دادن دندانها باز دهان بدون آن عینک باعث آسیب شود</label>
-                <label><input type="checkbox" name="sleep_with_open_mouth_injury"> انجام دادن دندانها که خواب باعث دهان باز آسیب می شود</label>
-                <label><input type="checkbox" name="night_grinding"> شب اندازی</label>
-                <label><input type="checkbox" name="jaw_grinding"> جرف زدن در خواب</label>
-                <label><input type="checkbox" name="tooth_pain_awakening"> از دندانهای خواب با درد اکنل برای خواب استفاده کردن</label>
-                <label><input type="checkbox" name="dental_device_usage"> داشتن دندانهایی که خواب را محکم کمی کنند</label>
-                <label><input type="checkbox" name="need_consultation"> درد در چه ناحیه ای است؟</label>
-            </div>
-        </div>
-        
-        <div class="clinical-item">
-            <h4 style="margin-bottom: 10px;">ناحیه سر و گردن</h4>
-            <div class="checkbox-list">
-                <label><input type="checkbox" name="nasal_congestion_right"> مشکل به خواب رفتن در بینی</label>
-                <label><input type="checkbox" name="nasal_congestion_left"> مشکل در حاله در خواب بینی</label>
-                <label><input type="checkbox" name="nasal_secretions"> مشکل در حالیکه بی سمی در خواب دارد</label>
-                <label><input type="checkbox" name="nostril_problems"> فکار نوستیل در حالیکه بی سمی در خواب دارد</label>
-                <label><input type="checkbox" name="nostril_deviation"> تکرارق توانه نوستیل در خواب دارد</label>
-                <label><input type="checkbox" name="nostril_issues_sleep"> تکرارق در حالیکه در سمی و تهیدی درآن خواب دارد</label>
-                <label><input type="checkbox" name="tongue_position_issues"> صیح رود از خواب بیدار شدن</label>
-                <label><input type="checkbox" name="sleep_tongue_position"> سایمان دندان در خواب</label>
-                <label><input type="checkbox" name="teeth_grinding_sleep"> کام گرفتن زبان در خواب</label>
-                <label><input type="checkbox" name="open_mouth_breathing"> انجام دادن دندانها بدون آنکه بدون دندان آسیب شود</label>
-                <label><input type="checkbox" name="open_mouth_with_injury"> انجام دادن دندانها بدون آنکه که خواب متنحرک به آسیب شود</label>
-                <label><input type="checkbox" name="bruxism"> شب اندازی</label>
-                <label><input type="checkbox" name="jaw_pain_sleep"> جرف در زبان در خواب</label>
-                <label><input type="checkbox" name="tmj_pain"> از دردهای خواب برای اکنل استفاده کردن</label>
-                <label><input type="checkbox" name="dental_appliance"> داشتن درخواب هایی که خواب را محکم می کنند</label>
-                <label><input type="checkbox" name="pain_location_specify"> دردر در چه ناحیه ای است؟</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Additional Symptoms -->
-    <div class="green-section-header">علائم تکمیلی</div>
+<div class="form-header">
+    <h2 class="form-title">لطفا موارد زیر را به دقت مطالعه فرمائید و در صورت داشتن هر یک از موارد علامت بزنید.</h2>
+    <span class="form-date persian-date"></span>
+</div>
     
-    <div class="checkbox-list" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
-        <label><input type="checkbox" name="difficulty_throat_exam"> خروپف بسیار بلند و از خواب بینم به علت خواب</label>
-        <label><input type="checkbox" name="choking_episodes"> احساس گرد گرفتن درگلا یاما زنگیدن در خواب</label>
-        <label><input type="checkbox" name="sleep_apnea_witnessed"> نگه رفتن در خواب</label>
-        <label><input type="checkbox" name="restless_sleep"> کوفیتی عضلات در خواب</label>
-        <label><input type="checkbox" name="unusual_sleep_behavior"> حملات خواب در رویدد غیر قابل کنترل شد</label>
-        <label><input type="checkbox" name="sleep_attacks"> حملات خواب یا خواب آلوده شدن ناگهانی</label>
-        <label><input type="checkbox" name="narcolepsy_symptoms"> دو رفتن زادی</label>
-        <label><input type="checkbox" name="sleep_walking"> سر کلاس ترس با جلسه خواب آلوده شدن</label>
-        <label><input type="checkbox" name="sleep_terrors"> سر کلر خواب آلوده شدن</label>
-        <label><input type="checkbox" name="loud_snoring"> ترق زیاد در شب</label>
-        <label><input type="checkbox" name="witnessed_apnea"> بیدار شدن از خواب با یافتلاکن یا سوزش معده</label>
-        <label><input type="checkbox" name="morning_headaches"> دو باز یا بیشنتر برای ادرار کردن از خواب بیدار شدن</label>
-        <label><input type="checkbox" name="excessive_daytime_sleepiness"> صیح در دهان خشکی</label>
-        <label><input type="checkbox" name="concentration_problems"> کابوس های شبانه</label>
-        <label><input type="checkbox" name="memory_issues"> سردردهای صبحگاهی</label>
-        <label><input type="checkbox" name="mood_changes"> راه رفتن در خواب</label>
-    </div>
+<div class="checkbox-list" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px;">
+    <label><input type="checkbox" name="difficulty_throat_exam"> خر و پف بسیار بلند و از خواب پریدن به علت خر و پف</label>
+    <label><input type="checkbox" name="choking_episodes">مشکل به خواب رفتن در شب</label>
+    <label><input type="checkbox" name="sleep_apnea_witnessed"> احساس گزگز شدن در پاها زمانی که سعی در خوابیدن دارید</label>
+    <label><input type="checkbox" name="restless_sleep"> مشکل در خواب ماندن در شب</label>
+    <label><input type="checkbox" name="unusual_sleep_behavior"> لگد زدن در خواب</label>
+    <label><input type="checkbox" name="sleep_attacks"> افکاز مغشوش در حالیکه سعی در خوابیدن دارید</label>
+    <label><input type="checkbox" name="narcolepsy_symptoms">حملات خواب روزانه که غیر قابل کنترل اند</label>
+    <label><input type="checkbox" name="sleep_walking">نگرانی اینکه نتوانید بخوابید</label>
+    <label><input type="checkbox" name="sleep_terrors">حملات خواب یا خواب آلوده شدن ناگهانی</label>
+    <label><input type="checkbox" name="loud_snoring">نگرانی در حالیکه دراز کشیده و سعی در خوابیدن دارید</label>
+    <label><input type="checkbox" name="witnessed_apnea">به خواب رفتن بی ارادی</label>
+    <label><input type="checkbox" name="morning_headaches"> صبح زود از خواب بیدار شدن</label>
+    <label><input type="checkbox" name="excessive_daytime_sleepiness"> سر کلاس درس یا جلسه خوابیدن یا خواب آلود شدن</label>
+    <label><input type="checkbox" name="concentration_problems">ساییدن دندان در حال خواب</label>
+    <label><input type="checkbox" name="memory_issues">سر کار خوابیدن یا خواب آلود شدن</label>
+    <label><input type="checkbox" name="mood_changes">گاز گرفتن زبان در خواب</label>
+</div>
 
     <!-- Form Actions -->
     <div class="form-actions">
