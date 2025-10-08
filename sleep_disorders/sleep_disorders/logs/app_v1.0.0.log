@@ -3682,3 +3682,9 @@ django.template.exceptions.TemplateDoesNotExist: sleep_clinic/patient_report.htm
 [2025-10-08 13:58:44,444] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
 [2025-10-08 13:59:05,459] INFO django.server "GET /form6/ HTTP/1.1" 200 11239
 [2025-10-08 13:59:05,471] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 15:38:18,131] INFO django.server "GET /form6/ HTTP/1.1" 200 12000
+[2025-10-08 15:38:18,142] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 15:39:45,823] INFO django.server "GET /form6/ HTTP/1.1" 200 11533
+[2025-10-08 15:39:45,833] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-08 15:39:59,824] INFO django.server "GET /form6/ HTTP/1.1" 200 11239
+[2025-10-08 15:39:59,837] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
