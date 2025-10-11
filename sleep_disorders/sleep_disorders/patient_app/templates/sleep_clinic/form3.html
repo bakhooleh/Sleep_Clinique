@@ -24,238 +24,367 @@
     </div>
 
     <!-- Sleep Schedule Section -->
-    <div class="scale-container" style="margin-top: 20px;">
-        <h3 style="color: var(--primary-green); margin-bottom: 20px;">برنامه خواب</h3>
-        
-        <div class="form-group">
-            <label>هنگام خوابیدن چقدر می گذرد تا که فکر شده ام و می پردازم کار کنید:</label>
-            <textarea name="sleep_thoughts" rows="3"></textarea>
-        </div>
+<table class="data-table" style="direction: rtl; width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+        <tr style="background-color: #f1f8e9;">
+            <th style="text-align: right; padding: 12px;">عبارت</th>
+            <th style="text-align: center;">هرگز</th>
+            <th style="text-align: center;">به‌ندرت</th>
+            <th style="text-align: center;">بعضی اوقات</th>
+            <th style="text-align: center;">معمولاً</th>
+            <th style="text-align: center;">همیشه</th>
+        </tr>
+    </thead>
 
-        <div class="form-group">
-            <label>بعد از یک روز، چقدر زمان می گیرد کنیم قلع شده نیمی توانم کار کنید:</label>
-            <textarea name="wake_time" rows="3"></textarea>
-        </div>
+    <tbody>
+        <tr>
+            <td style="text-align: right; padding: 12px;">هنگام خوابیدن حس می‌کنم فلج شده‌ام و نمی‌توانم حرکت کنم.</td>
+            <td><input type="radio" name="sleep_paralysis1" value="0"></td>
+            <td><input type="radio" name="sleep_paralysis1" value="1"></td>
+            <td><input type="radio" name="sleep_paralysis1" value="2"></td>
+            <td><input type="radio" name="sleep_paralysis1" value="3"></td>
+            <td><input type="radio" name="sleep_paralysis1" value="4"></td>
+        </tr>
 
-        <div class="form-group">
-            <label>وقتی صبح از خواب بیدار می شوم قدم صبوری معمولا روز دارم:</label>
-            <textarea name="morning_routine" rows="3"></textarea>
-        </div>
+        <tr>
+            <td style="text-align: right; padding: 12px;">بعد از یک چرت، حس می‌کنم فلج شده‌ام و نمی‌توانم حرکت کنم.</td>
+            <td><input type="radio" name="sleep_paralysis2" value="0"></td>
+            <td><input type="radio" name="sleep_paralysis2" value="1"></td>
+            <td><input type="radio" name="sleep_paralysis2" value="2"></td>
+            <td><input type="radio" name="sleep_paralysis2" value="3"></td>
+            <td><input type="radio" name="sleep_paralysis2" value="4"></td>
+        </tr>
 
-        <div class="form-group">
-            <label>(توضیحا) آنچه می دانیم بیدار هستیم:</label>
-            <textarea name="wake_activities" rows="3"></textarea>
-        </div>
+        <tr>
+            <td style="text-align: right; padding: 12px;">وقتی صبح از خواب بیدار می‌شوم، تصاویری همانند رؤیا دارم (توهم) اگرچه می دانم بیدار هستم. </td>
+            <td><input type="radio" name="dream_images" value="0"></td>
+            <td><input type="radio" name="dream_images" value="1"></td>
+            <td><input type="radio" name="dream_images" value="2"></td>
+            <td><input type="radio" name="dream_images" value="3"></td>
+            <td><input type="radio" name="dream_images" value="4"></td>
+        </tr>
 
-        <div class="form-group">
-            <label>درست بعد یا قبل از چرت زدن آنچه که دانیم که بیدار هستم ولی توضیحات خواب مانندی دارم:</label>
-            <textarea name="drowsy_activities" rows="3"></textarea>
-        </div>
 
-        <div class="form-group">
-            <label>وقتی خواب از صبح بیدار می شوم حس قلع بودن دانیم نمی توانم حرکت کنم:</label>
-            <textarea name="sleep_paralysis" rows="3"></textarea>
-        </div>
+        <tr>
+            <td style="text-align: right; padding: 12px;">درست بعد یا قبل از چرت زدن، اگرچه می‌دانم که بیدار هستم ولی توهمات خواب‌ مانندی دارم.</td>
+            <td><input type="radio" name="nap_hallucination" value="0"></td>
+            <td><input type="radio" name="nap_hallucination" value="1"></td>
+            <td><input type="radio" name="nap_hallucination" value="2"></td>
+            <td><input type="radio" name="nap_hallucination" value="3"></td>
+            <td><input type="radio" name="nap_hallucination" value="4"></td>
+        </tr>
 
-        <div class="form-group">
-            <label>وقتی می خندم زانوانم سست می شوند. وقتی می خندم، عصبانی می شوم و یا در احساسات غرق می شوم به یکباره چار سستی وضعف عضلات می شوم. وقتی قلع شدگی وضع موثر و ثابتی درحرکت؟</label>
-            <textarea name="cataplexy" rows="3"></textarea>
-        </div>
-    </div>
+        <tr>
+            <td style="text-align: right; padding: 12px;">وقتی صبح از خواب بیدار می‌شوم، حس فلج بودن دارم و نمی‌توانم حرکت کنم.</td>
+            <td><input type="radio" name="morning_paralysis" value="0"></td>
+            <td><input type="radio" name="morning_paralysis" value="1"></td>
+            <td><input type="radio" name="morning_paralysis" value="2"></td>
+            <td><input type="radio" name="morning_paralysis" value="3"></td>
+            <td><input type="radio" name="morning_paralysis" value="4"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: right; padding: 12px;">وقتی می‌خندم زانوانم سست می شوند. وقتی می خندم، عصبانی می شوم و یا دچار احساسات قوی می شوم به یکباره دچار سستی و ضعف عضلانی می شوم(و حتی فلج شدگی موقتی و ناتوانی حرکتی).</td>
+            <td><input type="radio" name="cataplexy" value="0"></td>
+            <td><input type="radio" name="cataplexy" value="1"></td>
+            <td><input type="radio" name="cataplexy" value="2"></td>
+            <td><input type="radio" name="cataplexy" value="3"></td>
+            <td><input type="radio" name="cataplexy" value="4"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: right; padding: 12px;">وضعیت سلامت عمومی خود را در حال حاضر چگونه ارزیابی می‌کنید؟</td>
+            <td colspan="5">
+                <select name="general_health" style="width: 100%; padding: 6px;">
+                    <option value="">انتخاب کنید...</option>
+                    <option value="excellent">عالی</option>
+                    <option value="good">خوب</option>
+                    <option value="fair">متوسط</option>
+                    <option value="poor">ضعیف</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    .data-table th, .data-table td {
+        border: 1px solid #ddd;
+    }
+    .data-table th {
+        background-color: #f1f8e9;
+        color: #33691e;
+        font-weight: 600;
+        text-align: center;
+        padding: 10px;
+    }
+    .data-table td {
+        text-align: center;
+        padding: 10px;
+    }
+    .data-table input[type="radio"] {
+        transform: scale(1.3);
+        cursor: pointer;
+    }
+    .data-table td:first-child {
+        text-align: right;
+        font-size: 15px;
+        width: 55%;
+    }
+</style>
+
 
     <!-- Medical Problems Checklist -->
-    <div class="scale-container" style="margin-top: 30px;">
-        <h3 style="color: var(--primary-green); margin-bottom: 20px;">مشکلات پزشکی</h3>
-        
-        <div class="symptom-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
-                <label style="margin: 0;">کدام یک از مشکلات زیر را در حال حاضر دارید و یا داشته اید؟ آکنون / گذشته</label>
-            </div>
-            <div></div>
-            
-            <div class="symptom-item">
-                <label>دیابت</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="diabetes_now"> آکنون</label>
-                    <label><input type="checkbox" name="diabetes_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>فشار خون بالا</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="hypertension_now"> آکنون</label>
-                    <label><input type="checkbox" name="hypertension_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>سکته مغزی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="stroke_now"> آکنون</label>
-                    <label><input type="checkbox" name="stroke_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>مشکلات قلبی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="heart_problems_now"> آکنون</label>
-                    <label><input type="checkbox" name="heart_problems_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>حملات قلبی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="heart_attack_now"> آکنون</label>
-                    <label><input type="checkbox" name="heart_attack_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>آنژین / گلو درد</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="angina_now"> آکنون</label>
-                    <label><input type="checkbox" name="angina_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>پرخیت موتن یا آغیرم</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="arrhythmia_now"> آکنون</label>
-                    <label><input type="checkbox" name="arrhythmia_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>آسم</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="asthma_now"> آکنون</label>
-                    <label><input type="checkbox" name="asthma_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>سل</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="tuberculosis_now"> آکنون</label>
-                    <label><input type="checkbox" name="tuberculosis_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>سایر بیماری های ریوی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="lung_disease_now"> آکنون</label>
-                    <label><input type="checkbox" name="lung_disease_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>آرتریاتی بینی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="nasal_arthritis_now"> آکنون</label>
-                    <label><input type="checkbox" name="nasal_arthritis_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>گرفتگی بینی / آلرژیش بینی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="nasal_congestion_now"> آکنون</label>
-                    <label><input type="checkbox" name="nasal_congestion_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>مشکلات جونوتی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="jaw_problems_now"> آکنون</label>
-                    <label><input type="checkbox" name="jaw_problems_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>مشکلات مغزی / عصبی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="neurological_now"> آکنون</label>
-                    <label><input type="checkbox" name="neurological_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>بیماری های روستات</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="prostate_now"> آکنون</label>
-                    <label><input type="checkbox" name="prostate_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>ناتوانی اعصابی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="nerve_disability_now"> آکنون</label>
-                    <label><input type="checkbox" name="nerve_disability_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>مشکل الکل</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="alcohol_problem_now"> آکنون</label>
-                    <label><input type="checkbox" name="alcohol_problem_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>مشکل مواد اعتیاد آور</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="addiction_now"> آکنون</label>
-                    <label><input type="checkbox" name="addiction_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>افسردگی</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="depression_now"> آکنون</label>
-                    <label><input type="checkbox" name="depression_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>سروخ</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="sorookh_now"> آکنون</label>
-                    <label><input type="checkbox" name="sorookh_past"> گذشته</label>
-                </div>
-            </div>
-            
-            <div class="symptom-item">
-                <label>حملات از حال رفتن</label>
-                <div style="display: flex; gap: 20px;">
-                    <label><input type="checkbox" name="fainting_now"> آکنون</label>
-                    <label><input type="checkbox" name="fainting_past"> گذشته</label>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="medical-section" dir="rtl" style="margin-top:30px">
+  <h3 style="color:#2e7d32;margin-bottom:12px">مشکلات پزشکی</h3>
 
-    <!-- Sleep Quality Questions -->
-    <div class="scale-container" style="margin-top: 30px;">
-        <div class="form-group">
-            <label>خیلی بد</label>
-            <div class="radio-group">
-                <label><input type="radio" name="sleep_quality_1" value="very_bad"> خیلی بد</label>
-                <label><input type="radio" name="sleep_quality_1" value="bad"> بد</label>
-                <label><input type="radio" name="sleep_quality_1" value="average"> متوسط</label>
-                <label><input type="radio" name="sleep_quality_1" value="good"> خوب</label>
-                <label><input type="radio" name="sleep_quality_1" value="excellent"> عالی</label>
-            </div>
-        </div>
-    </div>
+  <div class="legend-row">
+    <span class="legend-title">کدام یک از مشکلات زیر را در حال حاضر دارید و/یا در گذشته داشته‌اید؟</span>
+  </div>
+
+  <div class="medical-grid">
+    <!-- ستون چپ -->
+    <label class="med-row">
+      <span class="med-title">دیابت</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="diabetes_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="diabetes_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">فشار خون بالا</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="hypertension_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="hypertension_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">سکته مغزی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="stroke_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="stroke_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">مشکلات قلبی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="heart_problems_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="heart_problems_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">حملات قلبی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="heart_attack_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="heart_attack_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">آنژین / گلودرد</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="angina_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="angina_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">برونشیت مزمن یا آنفیزم </span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="arrhythmia_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="arrhythmia_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">آسم</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="asthma_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="asthma_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">سل</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="tb_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="tb_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">سایر بیماری‌های ریوی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="lung_other_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="lung_other_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">آلرژی‌های بینی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="nasal_allergy_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="nasal_allergy_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">گرفتگی بینی یا آبریزش بینی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="nasal_congestion_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="nasal_congestion_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">مشکلات هورمونی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="hormonal_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="hormonal_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">مشکلات مجاری ادراری و تناسلی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="neuro_sensory_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="neuro_sensory_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">بیماری‌های پروستات</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="prostate_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="prostate_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">افسردگی</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="depression_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="depression_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">تشنج</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="seizure_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="seizure_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">حملات از حال‌رفتن</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="fainting_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="fainting_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">مشکل الکل</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="alcohol_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="alcohol_past"><i></i>گذشته</label>
+      </span>
+    </label>
+
+    <label class="med-row">
+      <span class="med-title">مشکل مواد اعتیادآور</span>
+      <span class="med-pill">
+        <label class="opt"><input type="checkbox" name="substance_now"><i></i>اکنون</label>
+        <label class="opt"><input type="checkbox" name="substance_past"><i></i>گذشته</label>
+      </span>
+    </label>
+  </div>
+</div>
+
+<style>
+  .medical-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px 28px;
+  }
+  .med-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:default;
+  }
+  /* کپسول عنوان شبیه تصویر */
+  .med-title{
+    flex:1;
+    padding:8px 14px;
+    border:1px solid #d0ddb5;
+    background:#fbfdf5;
+    border-radius:12px;
+    line-height:1.6;
+    text-align:right;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  /* کپسول اکنون/گذشته */
+  .med-pill{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 10px;
+    border:1px solid #d0ddb5;
+    background:#fbfdf5;
+    border-radius:12px;
+    min-width:170px;
+    justify-content:center;
+  }
+  .med-pill .slash{opacity:.7;margin:0 2px}
+  /* چک‌باکس مربعی شبیه فرم کاغذی */
+  .opt{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+  }
+  .opt input{
+    appearance:none;
+    width:16px;height:16px;
+    margin:0;
+    position:relative;
+  }
+  .opt i{
+    width:16px;height:16px;
+    border:2px solid #b9c99a;
+    border-radius:3px;
+    display:inline-block;
+    box-sizing:border-box;
+    margin-left:2px;
+  }
+  .opt input:checked + i{
+    background:linear-gradient(#e5f2c9,#d7e7b8);
+    box-shadow:inset 0 0 0 3px white;
+    border-color:#8fb05a;
+  }
+
+  .legend-row{
+    display:flex;align-items:center;gap:12px;margin-bottom:10px
+  }
+  .legend-title{font-weight:600}
+  .legend-pill{
+    padding:6px 10px;border:1px solid #d0ddb5;background:#fbfdf5;border-radius:10px
+  }
+
+  @media (max-width:900px){
+    .medical-grid{grid-template-columns:1fr}
+  }
+</style>
+
+
 
     <!-- Form Actions -->
     <div class="form-actions">
