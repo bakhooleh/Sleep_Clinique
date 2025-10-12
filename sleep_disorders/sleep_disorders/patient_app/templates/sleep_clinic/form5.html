@@ -12,7 +12,7 @@
         <!-- Header with logos -->
 
         <div class="form-header">
-            <h2 class="form-title">جدول ارزیابی خواب</h2>
+            <h2 class="form-title">فرم 6  </h2>
             <span class="form-date" id="currentDate"></span>
         </div>
 
@@ -30,8 +30,7 @@
                 </div>
             </div>
             <!-- Sleep Pattern Questions -->
-            <div class="green-header">
-وضعیت خواب             </div>
+
 
             <div class="form-row">
                 <div class="form-col">
@@ -42,7 +41,7 @@
                     </div>
                 </div>
                 <div class="form-col">
-                    <label for="morning_naps_duration">مجموع مدت زمان:</label>
+                    <label for="morning_naps_duration">به صورت کلی چند دقیقه چرت زده اید؟</label>
                     <div class="time-input-group">
                         <input type="number" id="morning_naps_duration" name="morning_naps_duration" min="0" placeholder="دقیقه">
                         <span>دقیقه</span>
@@ -52,33 +51,16 @@
 
             <div class="form-row">
                 <div class="form-col">
-                    <label for="yesterday_naps">دیروز کلاً چند بار خوابیده اید؟</label>
+                    <label for="yesterday_naps">در سه ساعت گذشته چند بار چرت زده اید؟ </label>
                     <div class="time-input-group">
-                        <input type="number" id="yesterday_naps" name="yesterday_naps" min="0" placeholder="بار">
+                        <input type="number" id="yesterday_naps" name="last_3hours_naps" min="0" placeholder="بار">
                         <span>بار</span>
                     </div>
                 </div>
                 <div class="form-col">
-                    <label for="yesterday_naps_duration">مجموع مدت زمان:</label>
+                    <label for="yesterday_naps_duration">در سه ساعت اخیر به صورت کلی چقدر چرت زده اید؟</label>
                     <div class="time-input-group">
-                        <input type="number" id="yesterday_naps_duration" name="yesterday_naps_duration" min="0" placeholder="دقیقه">
-                        <span>دقیقه</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-col">
-                    <label for="last_3hours_naps">در سه ساعت گذشته چند بار خوابیده اید؟</label>
-                    <div class="time-input-group">
-                        <input type="number" id="last_3hours_naps" name="last_3hours_naps" min="0" placeholder="بار">
-                        <span>بار</span>
-                    </div>
-                </div>
-                <div class="form-col">
-                    <label for="last_3hours_duration">مجموع مدت زمان:</label>
-                    <div class="time-input-group">
-                        <input type="number" id="last_3hours_duration" name="last_3hours_duration" min="0" placeholder="دقیقه">
+                        <input type="number" id="yesterday_naps_duration" name="last_3hours_duration" min="0" placeholder="دقیقه">
                         <span>دقیقه</span>
                     </div>
                 </div>
@@ -86,8 +68,7 @@
 
             <!-- Caffeine Questions -->
             <div class="green-header">
-                مصرف کافئین
-            </div>
+یک بار مصرف کافئین می تواند برابر با یک استکان قهوه ، یک استکان چای، یک لیوان چای سرد و یا یک بطری نوشابه باشد.            </div>
 
             <div class="form-row">
                 <div class="form-col">
@@ -108,12 +89,12 @@
 
             <!-- Alcohol Questions -->
             <div class="green-header">
-                مصرف الکل
+             یک بار مصرف الکل می تواند برابر با یک بطری آب جو، یک شیشه شراب، یک پیک مشروب و یا یک لیوان نوشیدنی مخلوط باشد.
             </div>
 
             <div class="form-row">
                 <div class="form-col">
-                    <label for="today_alcohol">از لحظه ای که امروز از خواب بیدار شده اید تا این لحظه چند بار مصرف الکل داشته اید؟</label>
+                    <label for="today_alcohol">از لحظه ای که امروز از خواب بیدار شده اید تا این لحظه چندبار مصرف الکل داشته اید؟</label>
                     <div class="time-input-group">
                         <input type="number" id="today_alcohol" name="today_alcohol" min="0" placeholder="بار">
                         <span>بار</span>
@@ -128,122 +109,156 @@
                 </div>
             </div>
 
-            <!-- Assessment Table -->
-            <div class="green-header">
-                امروز احساس خواب‌آلودگی داشته‌اید؟
-            </div>
 
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 50%;">سوال</th>
-                        <th>کم</th>
-                        <th>به همان اندازه</th>
-                        <th>بله</th>
-                        <th>خیر</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="question-cell">امروز احساس خواب آلودگی داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_today" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_today" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_today" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_today" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با روزهای عادی، امروز چه اندازه احساس خواب آلودگی داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_comparison" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_comparison" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_comparison" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepiness_comparison" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">امروز احساس خستگی داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_today" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_today" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_today" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_today" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با روزهای عادی، امروز چه اندازه احساس خستگی داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_comparison" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_comparison" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_comparison" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="tiredness_comparison" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">امروز از نظر فیزیکی فعال بوده اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_today" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_today" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_today" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_today" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با روزهای عادی، امروز چه اندازه از نظر فیزیکی فعال بوده اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_comparison" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_comparison" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_comparison" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="physical_activity_comparison" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">امروز احساس بیماری داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="illness_today" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="illness_today" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="illness_today" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="illness_today" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با روزهای عادی، امروز چه اندازه احساس بیماری داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="illness_comparison" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="illness_comparison" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="illness_comparison" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="illness_comparison" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">امروز احساس تنش و اضطراب داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_today" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_today" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_today" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_today" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با روزهای عادی، امروز چه اندازه احساس تنش و اضطراب داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_comparison" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_comparison" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_comparison" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="anxiety_comparison" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">امروز احساس افسردگی و دلسردی داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="depression_today" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="depression_today" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="depression_today" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="depression_today" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با روزهای عادی، امروز چه اندازه احساس افسردگی و دلسردی داشته اید؟</td>
-                        <td class="radio-cell"><input type="radio" name="depression_comparison" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="depression_comparison" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="depression_comparison" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="depression_comparison" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">همین الان آیا احساس خواب آلودگی می کنید؟</td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_right_now" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_right_now" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_right_now" value="yes"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_right_now" value="no"></td>
-                    </tr>
-                    <tr>
-                        <td class="question-cell">در مقایسه با زمان خواب در شب، چه اندازه احساس خواب آلودگی دارید؟</td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_vs_bedtime" value="less"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_vs_bedtime" value="same"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_vs_bedtime" value="more"></td>
-                        <td class="radio-cell"><input type="radio" name="sleepy_vs_bedtime" value="no"></td>
-                    </tr>
-                </tbody>
-            </table>
+
+<div class="daily-status" dir="rtl">
+  <!-- باکس 1: خواب‌آلودگی -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">امروز احساس خواب‌آلودگی داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="sleepiness_today" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="sleepiness_today" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با روزهای عادی، امروز چه اندازه احساس خواب‌آلودگی داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="sleepiness_comp" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="sleepiness_comp" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="sleepiness_comp" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+
+  <!-- باکس 2: خستگی -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">امروز احساس خستگی داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="tired_today" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="tired_today" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با روزهای عادی، امروز چه اندازه احساس خستگی داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="tired_comp" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="tired_comp" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="tired_comp" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+
+  <!-- باکس 3: فعالیت فیزیکی -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">امروز از نظر فیزیکی فعال بوده‌اید؟</div>
+      <label class="opt"><input type="radio" name="phys_today" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="phys_today" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با روزهای عادی، امروز چه اندازه از نظر فیزیکی فعال بوده‌اید؟</div>
+      <label class="opt"><input type="radio" name="phys_comp" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="phys_comp" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="phys_comp" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+
+  <!-- باکس 4: احساس بیماری -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">امروز احساس بیماری داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="ill_today" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="ill_today" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با روزهای عادی، امروز چه اندازه احساس بیماری داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="ill_comp" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="ill_comp" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="ill_comp" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+
+  <!-- باکس 5: تنش و اضطراب -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">امروز احساس تنش و اضطراب داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="anx_today" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="anx_today" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با روزهای عادی، امروز چه اندازه احساس تنش و اضطراب داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="anx_comp" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="anx_comp" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="anx_comp" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+
+  <!-- باکس 6: افسردگی/دلسردی -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">امروز احساس افسردگی و دلسردی داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="dep_today" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="dep_today" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با روزهای عادی، امروز چه اندازه احساس افسردگی و دلسردی داشته‌اید؟</div>
+      <label class="opt"><input type="radio" name="dep_comp" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="dep_comp" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="dep_comp" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+
+  <!-- باکس 7: همین الان / نسبت به زمان خواب شب -->
+  <div class="qa-box">
+    <div class="qa-row qa-top">
+      <div class="qa-question">همین الان آیا احساس خواب‌آلودگی می‌کنید؟</div>
+      <label class="opt"><input type="radio" name="sleepy_now" value="yes"><i></i>بله</label>
+      <label class="opt"><input type="radio" name="sleepy_now" value="no"><i></i>خیر</label>
+    </div>
+    <div class="qa-row qa-bottom">
+      <div class="qa-question ">در مقایسه با زمان خواب در شب، چه اندازه احساس خواب‌آلودگی دارید؟</div>
+      <label class="opt"><input type="radio" name="sleepy_vs_night" value="less"><i></i>کم</label>
+      <label class="opt"><input type="radio" name="sleepy_vs_night" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="sleepy_vs_night" value="more"><i></i>بیشتر</label>
+    </div>
+  </div>
+</div>
+
+<style>
+  .daily-status{display:flex;flex-direction:column;gap:12px}
+  .qa-box{
+    border:1px solid #d0ddb5;background:#fbfdf5;border-radius:14px;padding:8px 10px
+  }
+  /* سطرها به‌صورت گرید تا ستون‌ها هم‌تراز باشند */
+  :root{
+    --w-yesno: 100px;       /* عرض ستون‌های بله/خیر */
+    --w-quant: 130px;       /* عرض ستون‌های کم/همان/بیشتر */
+  }
+  .qa-row{
+    display:grid;align-items:center;gap:10px;padding:6px 0
+  }
+  .qa-top{grid-template-columns: 1fr var(--w-yesno) var(--w-yesno)}
+.qa-bottom {
+  grid-template-columns: 1fr 130px 140px 100px; /* کمی ستون وسط رو بزرگ‌تر کردیم */
+  border-top: 1px dashed #d9e4c0;
+  padding-top: 10px;
+  margin-top: 4px;
+}
+  .qa-question{line-height:1.8;text-align:right}
+  /* .qa-question.sub{opacity:.9} */
+
+  /* چک‌مارک مربعی شبیه فرم کاغذی */
+.opt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap; /* ✅ جلوگیری از افتادن به خط بعد */
+  text-align: center;
+}
+  .opt input{appearance:none;width:16px;height:16px;margin:0}
+  .opt i{width:16px;height:16px;border:2px solid #b9c99a;border-radius:3px;display:inline-block;box-sizing:border-box}
+  .opt input:checked + i{background:linear-gradient(#e5f2c9,#d7e7b8);box-shadow:inset 0 0 0 3px #fff;border-color:#8fb05a}
+  .opt input:focus-visible + i{outline:2px solid #8fc64e;outline-offset:2px}
+
+  @media (max-width:800px){
+    :root{ --w-yesno: 84px; --w-quant: 110px; }
+  }
+</style>
 
             <!-- Form Actions -->
             <div class="form-actions">
