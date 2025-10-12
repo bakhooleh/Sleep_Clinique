@@ -4000,3 +4000,16 @@ django.template.exceptions.TemplateDoesNotExist: sleep_clinic/patient_report.htm
 [2025-10-12 12:04:46,470] INFO django.server "GET /form1/ HTTP/1.1" 200 8700
 [2025-10-12 12:04:46,832] INFO django.server "GET /form7/ HTTP/1.1" 200 11154
 [2025-10-12 12:04:50,570] INFO django.server "GET /dashboard/ HTTP/1.1" 200 9862
+[2025-10-12 12:05:56,484] INFO django.server "GET /form4/ HTTP/1.1" 200 11567
+[2025-10-12 12:05:56,900] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-12 12:05:57,804] INFO django.server "GET /form6/ HTTP/1.1" 200 11120
+[2025-10-12 12:05:57,817] WARNING django.server "GET /static/css/from6.css HTTP/1.1" 404 1966
+[2025-10-12 12:05:58,288] INFO django.server "GET /form3/ HTTP/1.1" 200 22456
+[2025-10-12 12:05:59,202] INFO django.server "GET /dashboard/ HTTP/1.1" 200 9862
+[2025-10-12 12:06:16,730] INFO django.server "GET /form8/ HTTP/1.1" 200 14428
+[2025-10-12 12:06:17,115] INFO django.server "GET /form5/ HTTP/1.1" 200 18857
+[2025-10-12 12:06:17,450] INFO django.server "GET /form1/ HTTP/1.1" 200 8700
+[2025-10-12 12:06:17,778] INFO django.server "GET /form7/ HTTP/1.1" 200 11154
+[2025-10-12 12:06:19,350] INFO django.server "GET /form1/ HTTP/1.1" 200 8700
+[2025-10-12 12:06:19,914] INFO django.server "GET /form8/ HTTP/1.1" 200 14428
+[2025-10-12 12:06:20,581] INFO django.server "GET /form1/ HTTP/1.1" 200 8700
