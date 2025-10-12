@@ -2,6 +2,10 @@
 
 {% block title %}فرم اطلاعات بیمار - مرکز تشخیص و درمان اختلالات خواب{% endblock %}
 
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form1.css' %}">
+{% endblock %}
 {% block content %}
 <div class="form-header">
     <h2 class="form-title">فرم 7</h2>
@@ -27,84 +31,272 @@
 
     <!-- Symptoms Checklist -->
     <div class="scale-container">
-        <h3 style="margin-bottom: 20px; color: var(--primary-green);">علائم و نشانه‌ها</h3>
+<div class="night-morning" dir="rtl">
+  <h3 style="color:#2e7d32;margin:0 0 10px;">ارزیابی دیشب و امروز صبح</h3>
+
+  <div class="nm-grid">
+
+    <!-- ستون راست: دیشب -->
+    <div>
+      <div class="nm-col-title">دیشب</div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا درد خواب شما را مختل نموده بود؟</div>
+        <label class="opt"><input type="radio" name="night_pain" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_pain" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا هنگامیکه می‌خواستید بخوابید یا حین بیداری حس فلج بودن داشتید؟</div>
+        <label class="opt"><input type="radio" name="night_paralysis" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_paralysis" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا احساس خزیدن چیزی روی پوست پاهای خود داشتید؟</div>
+        <label class="opt"><input type="radio" name="night_crawling" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_crawling" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا سوزش معده یا رفلاکس داشتید؟</div>
+        <label class="opt"><input type="radio" name="night_reflux" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_reflux" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا خوابی می‌دیدید؟</div>
+        <label class="opt"><input type="radio" name="night_dream" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_dream" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا دارویی یا چیزی برای اینکه راحت بخوابید استفاده نمودید؟</div>
+        <label class="opt"><input type="radio" name="night_drug" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_drug" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا سایش دندان داشتید؟</div>
+        <label class="opt"><input type="radio" name="night_bruxism" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="night_bruxism" value="no"><i></i>خیر</label>
+      </div></div>
+    </div>
+
+    <!-- ستون چپ: امروز صبح -->
+    <div>
+      <div class="nm-col-title">امروز صبح</div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا سخت از خواب بیدار شدید؟</div>
+        <label class="opt"><input type="radio" name="morning_hard_wake" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_hard_wake" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا خیلی زود از خواب بیدار شدید؟</div>
+        <label class="opt"><input type="radio" name="morning_early_wake" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_early_wake" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا از نظر بدنی احساس خستگی نمودید؟</div>
+        <label class="opt"><input type="radio" name="morning_tired_body" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_tired_body" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا دهانتان خشک شده بود؟</div>
+        <label class="opt"><input type="radio" name="morning_dry_mouth" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_dry_mouth" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا سر درد داشتید؟</div>
+        <label class="opt"><input type="radio" name="morning_headache" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_headache" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا احساس مستی و یا خماری داشتید؟</div>
+        <label class="opt"><input type="radio" name="morning_hangover" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_hangover" value="no"><i></i>خیر</label>
+      </div></div>
+
+      <div class="qa-box"><div class="qa-row qa-top">
+        <div class="qa-question">آیا احساس افسردگی و دلسردی داشتید؟</div>
+        <label class="opt"><input type="radio" name="morning_depressed" value="yes"><i></i>بله</label>
+        <label class="opt"><input type="radio" name="morning_depressed" value="no"><i></i>خیر</label>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+
+    </div>
+<!-- مقایسه با روزهای عادی -->
+<div class="daily-compare" dir="rtl" style="margin-top:14px">
+  <h3 style="color:#2e7d32;margin:0 0 8px;">در مقایسه با روزهای عادی</h3>
+
+  <!-- هدر مقیاس -->
+  <div class="scale-header">
+    <span>خیلی کم</span>
+    <span>حدودی کم</span>
+    <span>به همان اندازه</span>
+    <span>حدودی زیاد</span>
+    <span>خیلی زیاد</span>
+  </div>
+
+  <!-- ردیف‌ها -->
+  <div class="scale-row">
+                <div class="scale-question">چه اندازه دیشب خسته بودید؟</div>
+
+    <div class="scale-options">
+
+      <label class="opt"><input type="radio" name="sleepiness_scale" value="very_low"><i></i>خیلی کم</label>
+      <label class="opt"><input type="radio" name="sleepiness_scale" value="low"><i></i> تا حدودی کم</label>
+      <label class="opt"><input type="radio" name="sleepiness_scale" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="sleepiness_scale" value="high"><i></i>تا حدودی زیاد</label>
+      <label class="opt"><input type="radio" name="sleepiness_scale" value="very_high"><i></i>خیلی زیاد</label>
+    </div>
+  </div>
+
+  <div class="scale-row">
+        <div class="scale-question">اکنون چه اندازه احساس خواب آلودگی می کنید؟</div>
+
+    <div class="scale-options">
+      <label class="opt"><input type="radio" name="tired_scale" value="very_low"><i></i>خیلی کم</label>
+      <label class="opt"><input type="radio" name="tired_scale" value="low"><i></i>تا حدودی کم</label>
+      <label class="opt"><input type="radio" name="tired_scale" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="tired_scale" value="high"><i></i>تا حدودی زیاد</label>
+      <label class="opt"><input type="radio" name="tired_scale" value="very_high"><i></i>خیلی زیاد</label>
+    </div>
+  </div>
+    <div class="scale-row">
+        <div class="scale-question">به طور کلی کیفیت خوابتان دیشب چطور بود؟</div>
+
+    <div class="scale-options">
+      <label class="opt"><input type="radio" name="last_night_sleep_quality" value="very_low"><i></i>خیلی کم</label>
+      <label class="opt"><input type="radio" name="last_night_sleep_quality" value="low"><i></i>تا حدودی کم</label>
+      <label class="opt"><input type="radio" name="last_night_sleep_quality" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="last_night_sleep_quality" value="high"><i></i>تا حدودی زیاد</label>
+      <label class="opt"><input type="radio" name="last_night_sleep_quality" value="very_high"><i></i>خیلی زیاد</label>
+    </div>
+  </div>
+
+
+  <div class="scale-row">
+        <div class="scale-question">به نظرتان دیشب چند ساعت خوابیده اید؟</div>
+
+    <div class="scale-options">
+  <input type="text" name="last_night_how_much_sleep" >
+  <label>ساعت</label>
+
+    </div>
+
+  </div>
+  <div class="scale-row">
+        <div class="scale-question">آیا دیشب میزان خوابتان بسیار کم بوده است؟ </div>
+
+        <div class="scale-options">
+      <label class="opt"><input type="radio" name="last_night_little_sleep" value="yes"><i></i> بله</label>
+      <label class="opt"><input type="radio" name="last_night_little_sleep" value="no"><i></i>خیر</label>
+
+    </div>
+  </div>
+
+    <div class="scale-row">
+            <div class="scale-question">در مقایسه با روزهای عادی چقدر تفاوت دارد؟</div>
+
+    <div class="scale-options">
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_sleep" value="very_low"><i></i>خیلی کم</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_sleep" value="low"><i></i>تا حدودی کم</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_sleep" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_sleep" value="high"><i></i>تا حدودی زیاد</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_sleep" value="very_high"><i></i>خیلی زیاد</label>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="scale-row">
+        <div class="scale-question">چه اندازه طول کشید که خوابتان ببرد؟</div>
+
+    <div class="scale-options">
+<input type="text" name="how_long_fall_sleep" >
+<label>دقیقه</label>
+    </div>
+
+  </div>
+  <div class="scale-row">
+        <div class="scale-question">آیا زمان زیادی طول کشید که خوابتان ببرد؟ </div>
+
+        <div class="scale-options">
+      <label class="opt"><input type="radio" name="take_long_fall_sleep" value="yes"><i></i> بله</label>
+      <label class="opt"><input type="radio" name="take_long_fall_sleep" value="no"><i></i>خیر</label>
+
+    </div>
+  </div>
+
+    <div class="scale-row">
+            <div class="scale-question">در مقایسه با روزهای عادی چقدر تفاوت دارد؟</div>
+
+    <div class="scale-options">
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_fall_sleep" value="very_low"><i></i>خیلی کم</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_fall_sleep" value="low"><i></i>تا حدودی کم</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_fall_sleep" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_fall_sleep" value="high"><i></i>تا حدودی زیاد</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_fall_sleep" value="very_high"><i></i>خیلی زیاد</label>
+    </div>
+  </div>
+
+
+
+  <div class="scale-row">
+        <div class="scale-question">چند بار از خواب بیدار شدید؟</div>
+
+    <div class="scale-options">
+<input type="text" name="times_wake_up" >
+<label>بار</label>
+    </div>
+  </div>
+  <div class="scale-row">
+        <div class="scale-question">آیا دیشب دفعات زیادی از خواب بیدار شدید؟ </div>
+
+        <div class="scale-options">
+      <label class="opt"><input type="radio" name="many_times_wake_up" value="yes"><i></i> بله</label>
+      <label class="opt"><input type="radio" name="many_times_wake_up" value="no"><i></i>خیر</label>
+
+    </div>
+  </div>
+
+    <div class="scale-row">
+            <div class="scale-question">در مقایسه با روزهای عادی چقدر تفاوت دارد؟</div>
+
+    <div class="scale-options">
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_wake_up" value="very_low"><i></i>خیلی کم</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_wake_up" value="low"><i></i>تا حدودی کم</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_wake_up" value="same"><i></i>به همان اندازه</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_wake_up" value="high"><i></i>تا حدودی زیاد</label>
+      <label class="opt"><input type="radio" name="different_compared_to_normal_days_wake_up" value="very_high"><i></i>خیلی زیاد</label>
+    </div>
+  </div>
+
+
+
+<!-- توضیحات -->
+<div class="notes-box" dir="rtl" style="margin-top:14px">
+  <label class="notes-title">اگر مایل بودید موردی را درباره دیروز و دیشب ذکر کنید، می‌توانید از کادر پایین استفاده کنید:</label>
+  <textarea class="notes-area" name="free_notes" placeholder="توضیحات شما..."></textarea>
+</div>
         
-        <div class="symptom-grid">
-            <div class="symptom-item">
-                <input type="checkbox" id="snoring" name="snoring">
-                <label for="snoring">خرخر</label>
-            </div>
-            <div class="symptom-item">
-                <input type="checkbox" id="witnessed_apnea" name="witnessed_apnea">
-                <label for="witnessed_apnea">آپنه مشاهده شده</label>
-            </div>
-            <div class="symptom-item">
-                <input type="checkbox" id="morning_confusion" name="morning_confusion">
-                <label for="morning_confusion">گیجی صبح</label>
-            </div>
-            <div class="symptom-item">
-                <input type="checkbox" id="morning_dry_mouth" name="morning_dry_mouth">
-                <label for="morning_dry_mouth">خشکی دهان صبح</label>
-            </div>
-            <div class="symptom-item">
-                <input type="checkbox" id="morning_nausea" name="morning_nausea">
-                <label for="morning_nausea">تهوع صبح</label>
-            </div>
-            <div class="symptom-item">
-                <input type="checkbox" id="excessive_daytime_sleepiness" name="excessive_daytime_sleepiness">
-                <label for="excessive_daytime_sleepiness">خواب آلودگی مفرط روزانه</label>
-            </div>
-            <div class="symptom-item">
-                <input type="checkbox" id="depression" name="depression">
-                <label for="depression">افسردگی</label>
-            </div>
-            <div class="symptom_item">
-                <input type="checkbox" id="decreased_libido" name="decreased_libido">
-                <label for="decreased_libido">کاهش میل جنسی</label>
-            </div>
-        </div>
+
     </div>
 
-    <!-- Treatment History Table -->
-    <div class="table-section" style="margin-top: 30px;">
-        <h3 style="margin-bottom: 15px; color: var(--primary-green);">سابقه درمان</h3>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>نوع درمان</th>
-                    <th>تاریخ شروع</th>
-                    <th>تاریخ پایان</th>
-                    <th>نتیجه</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" name="treatment_type_1" style="border: none; width: 100%;"></td>
-                    <td><input type="date" name="treatment_start_1" style="border: none; width: 100%;"></td>
-                    <td><input type="date" name="treatment_end_1" style="border: none; width: 100%;"></td>
-                    <td><input type="text" name="treatment_result_1" style="border: none; width: 100%;"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="treatment_type_2" style="border: none; width: 100%;"></td>
-                    <td><input type="date" name="treatment_start_2" style="border: none; width: 100%;"></td>
-                    <td><input type="date" name="treatment_end_2" style="border: none; width: 100%;"></td>
-                    <td><input type="text" name="treatment_result_2" style="border: none; width: 100%;"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="treatment_type_3" style="border: none; width: 100%;"></td>
-                    <td><input type="date" name="treatment_start_3" style="border: none; width: 100%;"></td>
-                    <td><input type="date" name="treatment_end_3" style="border: none; width: 100%;"></td>
-                    <td><input type="text" name="treatment_result_3" style="border: none; width: 100%;"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Additional Comments -->
-    <div class="form-group" style="margin-top: 30px;">
-        <label for="comments">توضیحات اضافی:</label>
-        <textarea id="comments" name="comments" rows="4" placeholder="در صورت نیاز توضیحات اضافی را وارد کنید..."></textarea>
-    </div>
 
     <!-- Form Actions -->
     <div class="form-actions">

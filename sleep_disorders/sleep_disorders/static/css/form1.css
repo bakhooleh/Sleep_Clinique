@@ -1,0 +1,85 @@
+/* ستون‌بندی دیشب/امروز صبح */
+.nm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.nm-col-title{background:#8fc64e;color:#fff;padding:10px;border-radius:12px;text-align:center;font-weight:700}
+
+/* کادرهای سؤال (از CSS قبلی) */
+.qa-box{border:1px solid #d0ddb5;background:#fbfdf5;border-radius:14px;padding:8px 10px;margin-top:10px}
+.qa-row{display:grid;align-items:center;gap:10px;padding:4px 0}
+.qa-top{grid-template-columns:1fr 100px 100px}
+.qa-question{line-height:1.8;text-align:right}
+
+/* گزینه‌ها – مربعی و منظم (از قبل) */
+.opt{display:inline-flex;align-items:center;gap:6px;justify-content:center;white-space:nowrap}
+.opt input{appearance:none;width:16px;height:16px;margin:0}
+.opt i{width:16px;height:16px;border:2px solid #b9c99a;border-radius:3px;display:inline-block;box-sizing:border-box}
+.opt input:checked + i{background:linear-gradient(#e5f2c9,#d7e7b8);box-shadow:inset 0 0 0 3px #fff;border-color:#8fb05a}
+
+/* بخش مقایسه با روزهای عادی */
+.scale-header{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:6px 0 8px}
+.scale-header span{background:#eaf5d6;border:1px solid #d0ddb5;border-radius:10px;padding:6px 4px;text-align:center;white-space:nowrap}
+
+.scale-row{display:grid;grid-template-columns: 1.2fr 1fr;gap:10px;margin-bottom:8px}
+.scale-options{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:center;justify-items:center}
+.scale-question{border:1px solid #d0ddb5;background:#fbfdf5;border-radius:12px;padding:8px 10px;text-align:right;line-height:1.8}
+
+/* جعبه توضیحات */
+.notes-box{border:1px solid #d0ddb5;background:#fbfdf5;border-radius:14px;padding:8px 10px}
+.notes-title{display:block;margin-bottom:6px;font-weight:600}
+.notes-area{width:100%;min-height:120px;border:none;background:transparent;outline:none;font-size:14px}
+
+/* ریسپانسیو */
+@media (max-width:900px){
+  .nm-grid{grid-template-columns:1fr}
+  .qa-top{grid-template-columns:1fr 90px 90px}
+  .scale-row{grid-template-columns:1fr}
+}
+
+/* کانتینر اصلی و دو ستون */
+.nm-wrap{margin-top:6px}
+.nm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+/* هدر ستون‌ها */
+.col-head{display:grid;grid-template-columns:1fr 150px;align-items:center;margin-bottom:8px}
+.col-title{background:#8fc64e;color:#fff;padding:8px 12px;border-radius:12px;text-align:center;font-weight:700;white-space:nowrap}
+.col-yn{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.col-yn span{background:#eaf5d6;border:1px solid #d0ddb5;border-radius:10px;padding:6px 0;text-align:center;font-weight:600}
+
+/* هر ردیف سؤال */
+.row{
+  display:grid;
+  grid-template-columns:150px 1fr;   /* ستون چک‌ها + باکس سؤال */
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+.yn{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  align-items:center;
+  justify-items:center;
+  height:42px;
+  background:#fbfdf5;
+  border:1px solid #d0ddb5;
+  border-radius:12px;
+}
+.q{
+  background:#fbfdf5;
+  border:1px solid #d0ddb5;
+  border-radius:12px;
+  padding:8px 12px;
+  line-height:1.9;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  text-align:right;
+}
+
+/* چک‌باکس مربعی شبیه فرم */
+.opt{display:flex;align-items:center;justify-content:center}
+.opt input{appearance:none;width:16px;height:16px;margin:0}
+.opt i{width:16px;height:16px;border:2px solid #b9c99a;border-radius:3px;display:inline-block;box-sizing:border-box}
+.opt input:checked + i{background:linear-gradient(#e5f2c9,#d7e7b8);box-shadow:inset 0 0 0 3px #fff;border-color:#8fb05a}
+
+@media (max-width: 900px){
+  .nm-grid{grid-template-columns:1fr}
+  .row{grid-template-columns:140px 1fr}
+}
