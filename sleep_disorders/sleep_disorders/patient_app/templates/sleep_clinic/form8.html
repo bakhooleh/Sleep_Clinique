@@ -4,7 +4,7 @@
 
 {% block extra_css %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/from8.css' %}">
+<link rel="stylesheet" href="{% static 'css/form8.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -28,17 +28,82 @@
         </div>
     </div>
 
-    <!-- Additional Information Header -->
-    <div class="supplement-header">
-        لطفا اطلاعات مربوط به بستری بیمارستانی خود را در صورت وجود با ذکر طول و تاریخ قید نمایید (5 حالت که به خاطر دارید):
-    </div>
+<div class="admit-section" dir="rtl">
+  <h3 style="color:#2e7d32;margin:0 0 12px;">سابقه بستری</h3>
 
-    <!-- Hospitalization History -->
-    <div class="scale-container">
-        <h3 style="color: var(--primary-green); margin-bottom: 20px;">سابقه بستری</h3>
-        <textarea class="large-textarea" name="hospitalization_history" 
-                  placeholder="لطفا جزئیات مربوط به بستری های قبلی خود را با ذکر تاریخ، مدت بستری و دلیل آن وارد نمایید..."></textarea>
-    </div>
+  <table class="admit-table" id="admitTable">
+    <thead>
+      <tr>
+        <th class="th-reason">علت بستری</th>
+        <th class="th-date">تاریخ</th>
+        <th class="th-actions">عملیات</th>
+      </tr>
+    </thead>
+    <tbody id="admitBody">
+      <!-- ردیف‌های پویا اینجا می‌آیند -->
+    </tbody>
+  </table>
+
+  <button type="button" id="addRowBtn" class="btn-primary">افزودن سطر</button>
+</div>
+
+<!-- الگوی ردیف -->
+<template id="admitRowTpl">
+  <tr>
+    <td><input type="text" name="admit_reason_0" placeholder="مثلاً: جراحی، عفونت، ..."></td>
+    <td><input type="date" name="admit_date_0"></td>
+    <td class="actions">
+      <button type="button" class="btn-danger remove-row">حذف</button>
+    </td>
+  </tr>
+</template>
+
+<script>
+  (function(){
+    const body   = document.getElementById('admitBody');
+    const btnAdd = document.getElementById('addRowBtn');
+    const tpl    = document.getElementById('admitRowTpl');
+
+    // مقدار اولیه: یک ردیف خالی
+    addRow();
+
+btnAdd.addEventListener('click', () => addRow());
+
+    // حذف با delegation
+    body.addEventListener('click', (e)=>{
+      if(e.target.classList.contains('remove-row')){
+        const row = e.target.closest('tr');
+        row?.remove();
+        reindex();
+        // اگر همه حذف شدند، یکی اضافه کن که خالی نماند
+        if(!body.querySelector('tr')) addRow();
+      }
+    });
+
+    function addRow(reason='', date=''){
+      const clone = tpl.content.firstElementChild.cloneNode(true);
+      const [reasonInput, dateInput] = clone.querySelectorAll('input');
+      reasonInput.value = reason;
+      dateInput.value = date;
+      body.appendChild(clone);
+      reindex();
+    }
+
+    // به‌روزرسانی نام‌ها برای ارسال تمیز به سرور
+    function reindex(){
+      [...body.querySelectorAll('tr')].forEach((tr, idx)=>{
+        const inputs = tr.querySelectorAll('input');
+        const reason = inputs[0];
+        const date   = inputs[1];
+        reason.name = `admit[${idx}][reason]`;
+        date.name   = `admit[${idx}][date]`;
+      });
+    }
+
+    // در صورت نیاز از بیرون هم می‌تونی اضافه کنی:
+    // window.addAdmitRow = (r='', d='') => addRow(r, d);
+  })();
+</script>
 
     <!-- Medication and Treatment -->
     <div class="scale-container" style="margin-top: 30px;">
@@ -153,13 +218,7 @@
         </div>
     </div>
 
-    <!-- Final Notes -->
-    <div class="final-notes">
-        <h4 style="color: #cc6600; margin-bottom: 15px;">یادداشت های نهایی</h4>
-        <p>لطفا هرگونه اطلاعات تکمیلی که فکر می کنید برای پزشک معالج مفید خواهد بود را در این قسمت وارد نمایید:</p>
-        <textarea name="final_notes" rows="6" style="width: 100%; margin-top: 10px;" 
-                  placeholder="توضیحات تکمیلی..."></textarea>
-    </div>
+
 
     <!-- Form Actions -->
     <div class="form-actions">
