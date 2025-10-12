@@ -29,7 +29,7 @@
     </div>
 
 <div class="admit-section" dir="rtl">
-  <h3 style="color:#2e7d32;margin:0 0 12px;">سابقه بستری</h3>
+  <h3 style="color:#2e7d32;margin:0 0 12px;"> لطفا اطلاعات مربوط به بستری بیمارستانی خود را در صورت وجود با ذکر دلیل و تاریخ قید نمایید ( تا جایی که به خاطر دارید )</h3>
 
   <table class="admit-table" id="admitTable">
     <thead>
@@ -109,13 +109,12 @@ btnAdd.addEventListener('click', () => addRow());
     <div class="scale-container" style="margin-top: 30px;">
         <h3 style="color: var(--primary-green); margin-bottom: 20px;">لطفا جزئیات مهم در ارتباط با وضعیت سلامتی و درمانی خود را ذکر فرمایید:</h3>
         <textarea class="large-textarea" name="health_treatment_details" 
-                  placeholder="داروهای مصرفی، درمان های در حال انجام، مشکلات خاص سلامتی و سایر موارد مهم را ذکر کنید..."></textarea>
+              ></textarea>
     </div>
 
     <!-- Study Information -->
-    <div class="study-info-box">
-        <h4>اطلاعات مطالعه</h4>
-        <p style="margin-bottom: 15px;">
+    <div class="scale-container">
+        <p style="margin-bottom: 5px;">
 در اینجا لازم است بدانیم در شش ماه اخیر چه داروها، ویتامین ها و یا داروهای گیاهی را مصرف نموده اید. لطفا کمد داروئی و یا دفترچه بیمه خود را برای اینکه به خوبی بتوانید داروهای مصرفی را به یاد آورید بررسی نمایید. به مشکلات  و بیماری هایی که اخیرا داشته داشته و برای درمان آن داروهایی  را که مصرف نموده اید  فکر کنید.
         </p>
         
@@ -124,7 +123,6 @@ btnAdd.addEventListener('click', () => addRow());
 
     <!-- Additional Treatment Grid -->
     <div class="scale-container" style="margin-top: 30px;">
-        <h3 style="color: var(--primary-green); margin-bottom: 20px;">اطلاعات تکمیلی درمان</h3>
         
         <!-- Empty grid for additional treatment information -->
         <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;">
