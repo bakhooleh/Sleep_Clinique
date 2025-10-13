@@ -4142,3 +4142,23 @@ django.template.exceptions.TemplateDoesNotExist: sleep_clinic/patient_report.htm
 [2025-10-12 14:48:06,651] INFO django.server "GET /form1/ HTTP/1.1" 200 18389
 [2025-10-12 14:48:42,349] INFO django.server "GET /form7/ HTTP/1.1" 200 11154
 [2025-10-12 14:55:11,647] INFO django.server "GET /form7/ HTTP/1.1" 200 11154
+[2025-10-13 12:58:55,178] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2025-10-13 12:59:07,486] INFO django.server "GET /form1/ HTTP/1.1" 302 0
+[2025-10-13 12:59:07,495] INFO django.server "GET /login/?next=/form1/ HTTP/1.1" 200 1943
+[2025-10-13 12:59:07,565] INFO django.server "GET /static/img/logo.png HTTP/1.1" 200 3376
+[2025-10-13 12:59:07,565] INFO django.server "GET /static/css/login.css HTTP/1.1" 200 3076
+[2025-10-13 12:59:08,573] WARNING django.request Not Found: /favicon.ico
+[2025-10-13 12:59:08,573] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-13 12:59:17,600] INFO django.server "POST /login/?next=/form1/ HTTP/1.1" 302 0
+[2025-10-13 12:59:17,637] INFO django.server "GET /dashboard/ HTTP/1.1" 200 9862
+[2025-10-13 12:59:17,650] INFO django.server "GET /static/css/base.css HTTP/1.1" 200 8175
+[2025-10-13 12:59:17,651] INFO django.server "GET /static/img/khayyam.png HTTP/1.1" 200 5253
+[2025-10-13 12:59:17,651] INFO django.server "GET /static/js/base.js HTTP/1.1" 200 1170
+[2025-10-13 12:59:33,696] INFO django.server "GET /form1/ HTTP/1.1" 200 18389
+[2025-10-13 12:59:33,708] INFO django.server "GET /static/css/form1.css HTTP/1.1" 200 3855
+[2025-10-13 12:59:44,914] INFO django.server "GET /form7/ HTTP/1.1" 200 11154
+[2025-10-13 12:59:44,930] INFO django.server "GET /static/css/form7.css HTTP/1.1" 200 792
+[2025-10-13 13:00:19,544] INFO django.server "GET /form1/ HTTP/1.1" 200 18389
+[2025-10-13 13:04:25,430] INFO django.server "GET /form7/ HTTP/1.1" 200 11154
+[2025-10-13 13:04:28,438] INFO django.server "GET /form1/ HTTP/1.1" 200 18389
+[2025-10-13 13:07:03,551] INFO django.server "GET /form1/ HTTP/1.1" 200 18142
