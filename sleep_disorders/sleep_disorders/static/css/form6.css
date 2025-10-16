@@ -41,3 +41,87 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+.sleep-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'IRANSans', sans-serif;
+  background-color: #fbfdf5;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #c8d6a5;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d0ddb5;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  gap: 10px;
+}
+
+.form-row label {
+  flex: 1.5;
+  text-align: right;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.form-row input[type="time"],
+.form-row textarea {
+  flex: 0.7;
+  border: 1px solid #c8d6a5;
+  border-radius: 8px;
+  padding: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  background-color: #fbfdf5;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  resize: vertical;
+}
+
+textarea:focus,
+input[type="time"]:focus {
+  outline: none;
+  border-color: #8fb05a;
+  box-shadow: 0 0 5px rgba(143, 176, 90, 0.4);
+}
+
+.yes-no-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.yes-no-container label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* حالت موبایل */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+  }
+}

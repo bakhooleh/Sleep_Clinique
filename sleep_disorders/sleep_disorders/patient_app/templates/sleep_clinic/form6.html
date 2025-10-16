@@ -17,7 +17,7 @@
 
 <form method="post" action="{% url 'form6' %}">
     {% csrf_token %}
-    
+
     <!-- Patient Info Row -->
     <div class="form-row">
         <div class="form-col">
@@ -35,107 +35,148 @@
 
 
 
-    <div class="form-row">
-                <div class="form-col">
-        <div class="form-group">
-            <label>در طول هفته چه ساعتی می خوابید؟</label>
-           <input type="time" name="weekday_bedtime" style="width: 150px;">
-        </div>
-        </div>
-      <div class="form-col">
+        <div class="form-row">
+            <div class="form-col">
+                <div class="form-group">
+                    <label>در طول هفته چه ساعتی می خوابید؟</label>
+                    <input type="time" name="weekday_bedtime" style="width: 150px;">
+                </div>
+            </div>
+            <div class="form-col">
 
-        <div class="form-group">
-            <label>وسط روز چرت می زنید؟ </label>
-             <div class="yes-no-container">
-                <label><input type="radio" name="midday_nap" value="yes"> بله</label>
-                <label><input type="radio" name="midday_nap" value="no"> خیر</label>
-            </div>        </div>
+                <div class="form-group">
+                    <label>وسط روز چرت می زنید؟ </label>
+                    <div class="yes-no-container">
+                        <label><input type="radio" name="midday_nap" value="yes"> بله</label>
+                        <label><input type="radio" name="midday_nap" value="no"> خیر</label>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
-    </div>    
 
         <div class="form-row">
-
-        <div class="form-group">
-            <label>در طول هفته چه ساعتی از خواب بیدار می شوید؟</label>
-            <input type="time" name="weekday_waketime" style="width: 150px;">
-        </div>
-        </div>
-            <div class="form-row">
-
-        <div class="form-group">
-            <label>آخر هفته ها چه ساعتی می خوابید؟</label>
-            <input type="time" name="weekend_bedtime" style="width: 150px;">
-        </div>
-        </div>
-
-            <div class="form-row">
-
-        <div class="form-group">
-            <label>آخر هفته ها چه ساعتی از خواب بیدار می شوید؟</label>
-            <input type="time" name="weekend_waketime" style="width: 150px;">
-        </div>
-        </div>
-            <div class="form-row">
-
-        <div class="form-group">
-            <label>آیا به صورت شیفتی کار می کنید؟ </label>
-                <div class="yes-no-container">
-                <label><input type="radio" name="shift_work" value="yes"> بله</label>
-                <label><input type="radio" name="shift_work" value="no"> خیر</label>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>در طول هفته چه ساعتی از خواب بیدار می شوید؟</label>
+                    <input type="time" name="weekday_waketime" style="width: 150px;">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>چند وقت یکبار وسط روز چرت می زنید؟</label>
+                    <input type="text" name="how_often_midday_nap" style="width: 150px;">
+                </div>
             </div>
         </div>
-   </div>
-        
+        <div class="form-row">
+            <div class="form-col">
+                <div class="form-group">
+
+                    <label>آخر هفته ها چه ساعتی می خوابید؟</label>
+                    <input type="time" name="weekend_bedtime" style="width: 150px;">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>چند بار در هفته چرت می زنید؟</label>
+                    <input type="text" name="weekly_midday_nap" style="width: 150px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-col">
+                <div class="form-group">
+                    <label>آخر هفته ها چه ساعتی از خواب بیدار می شوید؟</label>
+                    <input type="time" name="weekend_waketime" style="width: 150px;">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>معمولا چرت های وسط روزتان چقدر طول میکشد؟</label>
+                    <label><input type="text" name="midday_nap_time" style="width: 150px;"> دقیقه</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-col">
+                <div class="form-group">
+                    <label>آیا به صورت شیفتی کار می کنید؟ </label>
+                    <div class="yes-no-container">
+                        <label><input type="radio" name="shift_work" value="yes"> بله</label>
+                        <label><input type="radio" name="shift_work" value="no"> خیر</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>آیا پس از چرت سرحال بیدار می شوید؟</label>
+                   <div class="yes-no-container">
+                        <label><input type="radio" name="after_nap" value="yes"> بله</label>
+                        <label><input type="radio" name="after_nap" value="no"> خیر</label>
+                    </div>                </div>
+            </div>
+        </div>
+
         <div class="form-group">
             <label>اگر جوابتان بلی است لطفا نوع شیفت کاری خود را توضیح دهید:</label>
             <textarea name="shift_work_description" rows="3"></textarea>
         </div>
     </div>
 
-    
-<div class="form-header">
-    <h2 class="form-title">لطفا موارد زیر را به دقت مطالعه فرمائید و در صورت داشتن هر یک از موارد علامت بزنید.</h2>
-    <span class="form-date persian-date"></span>
-</div>
-    
-<div class="checkbox-list" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px;">
-    <label><input type="checkbox" name="difficulty_throat_exam"> خر و پف بسیار بلند و از خواب پریدن به علت خر و پف</label>
-    <label><input type="checkbox" name="choking_episodes">مشکل به خواب رفتن در شب</label>
-    <label><input type="checkbox" name="sleep_apnea_witnessed"> احساس گزگز شدن در پاها زمانی که سعی در خوابیدن دارید</label>
-    <label><input type="checkbox" name="restless_sleep"> مشکل در خواب ماندن در شب</label>
-    <label><input type="checkbox" name="unusual_sleep_behavior"> لگد زدن در خواب</label>
-    <label><input type="checkbox" name="sleep_attacks"> افکاز مغشوش در حالیکه سعی در خوابیدن دارید</label>
-    <label><input type="checkbox" name="narcolepsy_symptoms">حملات خواب روزانه که غیر قابل کنترل اند</label>
-    <label><input type="checkbox" name="sleep_walking">نگرانی اینکه نتوانید بخوابید</label>
-    <label><input type="checkbox" name="sleep_terrors">حملات خواب یا خواب آلوده شدن ناگهانی</label>
-    <label><input type="checkbox" name="loud_snoring">نگرانی در حالیکه دراز کشیده و سعی در خوابیدن دارید</label>
-    <label><input type="checkbox" name="witnessed_apnea">به خواب رفتن بی ارادی</label>
-    <label><input type="checkbox" name="morning_headaches"> صبح زود از خواب بیدار شدن</label>
-    <label><input type="checkbox" name="excessive_daytime_sleepiness"> سر کلاس درس یا جلسه خوابیدن یا خواب آلود شدن</label>
-    <label><input type="checkbox" name="concentration_problems">ساییدن دندان در حال خواب</label>
-    <label><input type="checkbox" name="memory_issues">سر کار خوابیدن یا خواب آلود شدن</label>
-    <label><input type="checkbox" name="mood_changes">گاز گرفتن زبان در خواب</label>
-    <label><input type="checkbox" name="night_sweating"> عرق کردن بسیار زیاد در شب</label>
-    <label><input type="checkbox" name="acting_out_dreams"> انجام دادن رویاها در حال خواب بدون اینکه باعث آسیب شود</label>
-    <label><input type="checkbox" name="acid_reflux_wake"> بیدار شدن از خواب با ریفلاکس یا سوزش معده</label>
-    <label><input type="checkbox" name="injurious_dreams"> انجام دادن رویاها در حال خواب که منجر به آسیب شود</label>
-    <label><input type="checkbox" name="nocturia"> دو بار یا بیشتر برای ادرار کردن از خواب بیدار شدن</label>
-    <label><input type="checkbox" name="bed_wetting"> شب ادراری</label>
-    <label><input type="checkbox" name="dry_mouth_morning"> خشکی دهان در صبح</label>
-     <label><input type="checkbox" name="talking_in_sleep"> حرف زدن در خواب</label>
-    <label><input type="checkbox" name="nightmares"> کابوس‌های شبانه</label>
-     <label><input type="checkbox" name="sleep_medications"> از داروهای خواب یا از الکل برای خوابیدن استفاده کردن</label>
-     <label><input type="checkbox" name="morning_headache"> سردردهای صبحگاهی</label>
-    <label><input type="checkbox" name="pain_interrupting_sleep"> داشتن دردهایی که خواب را مختل می‌کند</label>
 
-   <label><input type="checkbox" name="sleep_walking"> راه رفتن در خواب</label>
-  <label style="display: flex; align-items: center; gap: 5px;">
-    درد در چه ناحیه‌ای است؟
-    <input type="text" name="pain_area" style="width: 150px; padding: 3px 5px; border: 1px solid #ccc; border-radius: 4px;">
-  </label>
+    <div class="form-header">
+        <h2 class="form-title">لطفا موارد زیر را به دقت مطالعه فرمائید و در صورت داشتن هر یک از موارد علامت بزنید.</h2>
+        <span class="form-date persian-date"></span>
+    </div>
 
-</div>
+    <div class="checkbox-list"
+        style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px;">
+        <label><input type="checkbox" name="difficulty_throat_exam"> خر و پف بسیار بلند و از خواب پریدن به علت خر و
+            پف</label>
+        <label><input type="checkbox" name="choking_episodes">مشکل به خواب رفتن در شب</label>
+        <label><input type="checkbox" name="sleep_apnea_witnessed"> احساس گزگز شدن در پاها زمانی که سعی در خوابیدن
+            دارید</label>
+        <label><input type="checkbox" name="restless_sleep"> مشکل در خواب ماندن در شب</label>
+        <label><input type="checkbox" name="unusual_sleep_behavior"> لگد زدن در خواب</label>
+        <label><input type="checkbox" name="sleep_attacks"> افکاز مغشوش در حالیکه سعی در خوابیدن دارید</label>
+        <label><input type="checkbox" name="narcolepsy_symptoms">حملات خواب روزانه که غیر قابل کنترل اند</label>
+        <label><input type="checkbox" name="sleep_walking">نگرانی اینکه نتوانید بخوابید</label>
+        <label><input type="checkbox" name="sleep_terrors">حملات خواب یا خواب آلوده شدن ناگهانی</label>
+        <label><input type="checkbox" name="loud_snoring">نگرانی در حالیکه دراز کشیده و سعی در خوابیدن دارید</label>
+        <label><input type="checkbox" name="witnessed_apnea">به خواب رفتن بی ارادی</label>
+        <label><input type="checkbox" name="morning_headaches"> صبح زود از خواب بیدار شدن</label>
+        <label><input type="checkbox" name="excessive_daytime_sleepiness"> سر کلاس درس یا جلسه خوابیدن یا خواب آلود
+            شدن</label>
+        <label><input type="checkbox" name="concentration_problems">ساییدن دندان در حال خواب</label>
+        <label><input type="checkbox" name="memory_issues">سر کار خوابیدن یا خواب آلود شدن</label>
+        <label><input type="checkbox" name="mood_changes">گاز گرفتن زبان در خواب</label>
+        <label><input type="checkbox" name="night_sweating"> عرق کردن بسیار زیاد در شب</label>
+        <label><input type="checkbox" name="acting_out_dreams"> انجام دادن رویاها در حال خواب بدون اینکه باعث آسیب
+            شود</label>
+        <label><input type="checkbox" name="acid_reflux_wake"> بیدار شدن از خواب با ریفلاکس یا سوزش معده</label>
+        <label><input type="checkbox" name="injurious_dreams"> انجام دادن رویاها در حال خواب که منجر به آسیب شود</label>
+        <label><input type="checkbox" name="nocturia"> دو بار یا بیشتر برای ادرار کردن از خواب بیدار شدن</label>
+        <label><input type="checkbox" name="bed_wetting"> شب ادراری</label>
+        <label><input type="checkbox" name="dry_mouth_morning"> خشکی دهان در صبح</label>
+        <label><input type="checkbox" name="talking_in_sleep"> حرف زدن در خواب</label>
+        <label><input type="checkbox" name="nightmares"> کابوس‌های شبانه</label>
+        <label><input type="checkbox" name="sleep_medications"> از داروهای خواب یا از الکل برای خوابیدن استفاده
+            کردن</label>
+        <label><input type="checkbox" name="morning_headache"> سردردهای صبحگاهی</label>
+        <label><input type="checkbox" name="pain_interrupting_sleep"> داشتن دردهایی که خواب را مختل می‌کند</label>
+
+        <label><input type="checkbox" name="sleep_walking"> راه رفتن در خواب</label>
+        <label style="display: flex; align-items: center; gap: 5px;">
+            درد در چه ناحیه‌ای است؟
+            <input type="text" name="pain_area"
+                style="width: 150px; padding: 3px 5px; border: 1px solid #ccc; border-radius: 4px;">
+        </label>
+
+    </div>
 
     <!-- Form Actions -->
     <div class="form-actions">
