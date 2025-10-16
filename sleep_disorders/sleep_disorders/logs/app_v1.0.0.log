@@ -4733,3 +4733,5 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'endblock'. Did you forget to register or load this tag?
 [2025-10-16 09:56:28,519] ERROR django.server "GET /form3/ HTTP/1.1" 500 175460
+[2025-10-16 09:57:46,032] INFO django.server "GET /form3/ HTTP/1.1" 200 22512
+[2025-10-16 09:57:46,053] INFO django.server "GET /static/css/form3.css HTTP/1.1" 200 0
