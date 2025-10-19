@@ -43,6 +43,13 @@
 }
 
 
+.form-group{
+  display: flex !important;
+  flex-direction: column !important;   /* زیر هم */
+  align-items: flex-start !important;   /* چسبیده به راستِ RTL */
+}
+
+
 .sleep-form {
   display: flex;
   flex-direction: column;
