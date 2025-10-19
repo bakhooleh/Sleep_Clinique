@@ -1,0 +1,17 @@
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .radio-group {
+            display: inline-flex;
+            gap: 15px;
+            margin-right: 20px;
+            align-items: center;
+        }
+        .radio-group label {
+            margin: 0;
+            white-space: nowrap;
+        }
+        .form-group label:first-child {
+            display: inline-block;
+            width: 60%;
+        }
