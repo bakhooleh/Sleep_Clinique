@@ -4942,3 +4942,63 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'en
 [2025-10-18 13:38:29,468] INFO django.server "GET /form4/ HTTP/1.1" 200 11567
 [2025-10-18 13:39:14,177] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
 [2025-10-18 13:39:16,008] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 11:41:18,736] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2025-10-19 11:41:32,818] INFO django.server "GET /form7/ HTTP/1.1" 302 0
+[2025-10-19 11:41:32,827] INFO django.server "GET /login/?next=/form7/ HTTP/1.1" 200 1943
+[2025-10-19 11:41:32,911] INFO django.server "GET /static/img/logo.png HTTP/1.1" 200 3376
+[2025-10-19 11:41:32,911] INFO django.server "GET /static/css/login.css HTTP/1.1" 200 3076
+[2025-10-19 11:41:33,383] WARNING django.request Not Found: /favicon.ico
+[2025-10-19 11:41:33,384] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-19 11:41:43,818] INFO django.server "POST /login/?next=/form7/ HTTP/1.1" 302 0
+[2025-10-19 11:41:43,854] INFO django.server "GET /dashboard/ HTTP/1.1" 200 9862
+[2025-10-19 11:41:43,869] INFO django.server "GET /static/img/khayyam.png HTTP/1.1" 200 5253
+[2025-10-19 11:41:43,869] INFO django.server "GET /static/css/base.css HTTP/1.1" 200 8175
+[2025-10-19 11:41:43,869] INFO django.server "GET /static/js/base.js HTTP/1.1" 200 1170
+[2025-10-19 11:41:48,628] INFO django.server "GET /form1/ HTTP/1.1" 200 18142
+[2025-10-19 11:41:48,641] INFO django.server "GET /static/css/form1.css HTTP/1.1" 200 3855
+[2025-10-19 11:41:53,817] INFO django.server "GET /dashboard/ HTTP/1.1" 200 9862
+[2025-10-19 11:43:09,104] INFO django.server "GET /form4/ HTTP/1.1" 200 11567
+[2025-10-19 11:43:09,132] INFO django.server "GET /static/css/form4.css HTTP/1.1" 200 659
+[2025-10-19 12:24:29,924] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:27:14,608] INFO django.server "GET /form4/ HTTP/1.1" 200 11567
+[2025-10-19 12:27:16,687] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:33:24,278] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:33:28,898] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:33:28,915] INFO django.server "GET /static/css/base.css HTTP/1.1" 200 8175
+[2025-10-19 12:33:28,916] INFO django.server "GET /static/js/base.js HTTP/1.1" 200 1170
+[2025-10-19 12:33:28,916] INFO django.server "GET /static/img/logo.png HTTP/1.1" 200 3376
+[2025-10-19 12:33:28,916] INFO django.server "GET /static/img/khayyam.png HTTP/1.1" 200 5253
+[2025-10-19 12:33:29,818] WARNING django.request Not Found: /favicon.ico
+[2025-10-19 12:33:29,818] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-19 12:33:36,370] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:06,252] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:10,205] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:10,217] INFO django.server "GET /static/js/base.js HTTP/1.1" 200 1170
+[2025-10-19 12:34:10,217] INFO django.server "GET /static/css/base.css HTTP/1.1" 200 8175
+[2025-10-19 12:34:10,217] INFO django.server "GET /static/img/khayyam.png HTTP/1.1" 200 5253
+[2025-10-19 12:34:10,217] INFO django.server "GET /static/img/logo.png HTTP/1.1" 200 3376
+[2025-10-19 12:34:10,856] WARNING django.request Not Found: /favicon.ico
+[2025-10-19 12:34:10,858] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-19 12:34:27,131] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:29,895] INFO django.server "GET /form3/ HTTP/1.1" 200 22512
+[2025-10-19 12:34:29,908] INFO django.server "GET /static/css/form3.css HTTP/1.1" 200 0
+[2025-10-19 12:34:30,594] INFO django.server "GET /form6/ HTTP/1.1" 200 13219
+[2025-10-19 12:34:30,608] INFO django.server "GET /static/css/form6.css HTTP/1.1" 200 2239
+[2025-10-19 12:34:31,983] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:33,570] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:35,291] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:34:35,305] INFO django.server "GET /static/js/base.js HTTP/1.1" 200 1170
+[2025-10-19 12:34:35,305] INFO django.server "GET /static/css/base.css HTTP/1.1" 200 8175
+[2025-10-19 12:34:35,305] INFO django.server "GET /static/img/khayyam.png HTTP/1.1" 200 5253
+[2025-10-19 12:34:35,305] INFO django.server "GET /static/img/logo.png HTTP/1.1" 200 3376
+[2025-10-19 12:34:35,747] WARNING django.request Not Found: /favicon.ico
+[2025-10-19 12:34:35,747] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 15150
+[2025-10-19 12:34:58,297] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:35:14,737] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:35:26,176] INFO django.server "GET /form7/ HTTP/1.1" 200 11248
+[2025-10-19 12:35:26,195] INFO django.server "GET /static/css/form7.css HTTP/1.1" 200 3846
+[2025-10-19 12:35:29,039] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:36:22,029] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:36:34,057] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:37:14,308] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
+[2025-10-19 12:38:03,558] INFO django.server "GET /form2/ HTTP/1.1" 200 16277
